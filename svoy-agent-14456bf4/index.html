@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Свой агент для креативной команды — воркшоп и внедрение ИИ-агентов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F1EA; --ink:#141414; --muted:#6B675F; --line:#D9D3C6;
+    --card:#FBF9F4; --accent:#E8572A; --dark:#141414; --darkmuted:#9C978C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-snap-type:y proximity;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Golos Text",system-ui,sans-serif;
+       font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .slide{min-height:100vh;scroll-snap-align:start;padding:72px 7vw;display:flex;flex-direction:column;
+         justify-content:center;border-bottom:1px solid var(--line);position:relative}
+  .slide.dark{background:var(--dark);color:#F4F1EA;border-color:#2a2a2a}
+  .wrap{max-width:1180px;width:100%;margin:0 auto}
+  .num{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted);margin-bottom:28px}
+  .dark .num{color:var(--darkmuted)}
+  h1{font-size:clamp(44px,7vw,96px);line-height:1.02;font-weight:700;letter-spacing:-.025em;max-width:13ch}
+  h2{font-size:clamp(32px,4.4vw,58px);line-height:1.08;font-weight:700;letter-spacing:-.02em;max-width:20ch;margin-bottom:40px}
+  h3{font-size:21px;font-weight:600;line-height:1.3;margin-bottom:8px}
+  .lead{font-size:clamp(19px,1.7vw,24px);max-width:40ch;margin-top:32px;color:var(--muted)}
+  .dark .lead{color:var(--darkmuted)}
+  p.muted,.muted{color:var(--muted)}
+  .dark .muted{color:var(--darkmuted)}
+  .btn{display:inline-block;margin-top:44px;padding:18px 30px;background:var(--accent);color:#fff;
+       text-decoration:none;font-weight:600;border-radius:4px;font-size:18px}
+  .btn:hover{background:#cf4720}
+  .meta{margin-top:56px;display:flex;gap:48px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+  .meta b{display:block;color:var(--ink);font-size:17px;font-weight:600}
+  .grid{display:grid;gap:20px}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px}
+  .dark .card{background:#1d1d1d;border-color:#2e2e2e}
+  .card p{font-size:16px;color:var(--muted)}
+  .dark .card p{color:var(--darkmuted)}
+  .big{font-size:clamp(56px,7vw,92px);font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--accent)}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:56px;margin-top:8px}
+  .facts p{font-size:17px;max-width:34ch;margin-top:14px}
+  .src{font-size:13px;color:var(--muted);margin-top:10px}
+  .src a{color:var(--muted)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}
+  .dark .steps{border-color:#F4F1EA}
+  .step{padding:28px 28px 0 0}
+  .step .when{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--accent);margin-bottom:14px}
+  .step ul{list-style:none;margin-top:12px}
+  .step li{padding:8px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .dark .step li{border-color:#2e2e2e;color:#d8d3c8}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .list{list-style:none}
+  .list li{padding:18px 0;border-bottom:1px solid var(--line);font-size:18px}
+  .list li b{font-weight:600}
+  .dark .list li{border-color:#2e2e2e}
+  .case{display:grid;grid-template-columns:1.1fr 1fr;gap:64px}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:14px 28px;font-size:17px}
+  .kv dt{color:var(--muted)} .kv dd{font-weight:500}
+  .flow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:16px;margin-top:14px}
+  .flow span{padding:6px 12px;border:1px solid var(--line);border-radius:4px;background:var(--bg)}
+  .flow i{font-style:normal;color:var(--accent)}
+  .price{display:flex;flex-direction:column;justify-content:space-between;min-height:250px}
+  .price .p{font-size:30px;font-weight:700;letter-spacing:-.01em;margin-top:24px}
+  .price .p small{font-size:16px;font-weight:500;color:var(--muted)}
+  .price.main{background:var(--ink);color:#F4F1EA;border-color:var(--ink)}
+  .price.main p,.price.main .p small{color:var(--darkmuted)}
+  .tag{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent);margin-bottom:12px}
+  .note{font-size:14px;color:var(--muted);margin-top:28px}
+  .stack{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .stack .card h3{margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chips span{font-size:14px;padding:5px 10px;border-radius:3px;background:#262626;color:#d8d3c8}
+  .end h2{max-width:18ch}
+  .counter{position:fixed;right:22px;bottom:18px;font-family:"JetBrains Mono",monospace;font-size:12px;
+           color:var(--muted);mix-blend-mode:difference;color:#aaa;z-index:5}
+  @media (max-width:900px){
+    body{font-size:17px}
+    .slide{padding:64px 22px;min-height:auto}
+    .g2,.g3,.g4,.facts,.steps,.split,.case,.stack{grid-template-columns:1fr}
+    .step{padding:24px 0 0}
+    .meta{gap:24px}
+    .counter{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- 01 -->
+<section class="slide">
+  <div class="wrap">
+    <div class="num">Воркшоп и внедрение ИИ-агентов</div>
+    <h1>Свой агент для креативной команды</h1>
+    <p class="lead">За два часа каждый в команде собирает личного ИИ-ассистента. Он живёт в Телеграме, работает на компьютере, помнит проекты и забирает рутину вокруг макетов и роликов.</p>
+    <a class="btn" href="https://t.me/ranopostarel" target="_blank" rel="noopener">Обсудить воркшоп</a>
+    <div class="meta">
+      <div><b>Для кого</b>дизайн, моушн, видео, маркетинг</div>
+      <div><b>Группа</b>10–30 человек</div>
+      <div><b>Формат</b>офлайн или онлайн, 2 часа</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="slide">
+  <div class="wrap">
+    <div class="num">01 — Зачем</div>
+    <h2>Нейросети компания уже оплатила. Пользуются ими единицы</h2>
+    <div class="facts">
+      <div>
+        <div class="big">93%</div>
+        <p>корпоративных ИИ-бюджетов уходит на инструменты и лицензии. На обучение и перестройку работы остаётся 7%.</p>
+        <div class="src">Deloitte, по <a href="https://www.freshworks.com/theworks/employee-experience/upside-of-upskilling/" target="_blank" rel="noopener">Freshworks</a></div>
+      </div>
+      <div>
+        <div class="big">AI First</div>
+        <p>Крупные компании переводят команды на ежедневную работу с нейросетями. Руководителю нужно, чтобы команда реально начала ими пользоваться.</p>
+        <div class="src"><a href="https://www1.ru/news/2026/04/04/ii-assistent-avi-poiavitsia-u-kazdogo-polzovatelia-avito-v-2026-godu.html" target="_blank" rel="noopener">Авито, 2026</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="slide">
+  <div class="wrap">
+    <div class="num">02 — Что получит команда</div>
+    <h2>После воркшопа агент уже работает на задачах команды</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Личный агент у каждого</h3><p>Пишешь боту в Телеграм, отвечает Claude Code, Codex или российская модель на твоём компьютере. Открывает файлы, ищет в интернете, правит, конвертирует, раскладывает по папкам.</p></div>
+      <div class="card"><h3>Подключён к вашим инструментам</h3><p>Фигма, Google Диск и Таблицы, After Effects, генерация картинок и видео. Агент работает в них сам, без копирования туда-обратно.</p></div>
+      <div class="card"><h3>Память проектов</h3><p>Карточка проекта: клиент, сроки, версии, что согласовано, где исходники. Агент помнит контекст и не переспрашивает каждый раз.</p></div>
+      <div class="card"><h3>Список задач, которые можно отдать агенту</h3><p>Собираем из опроса команды до встречи. Уходите с перечнем рутин и понятным порядком, в котором их автоматизировать.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="slide dark">
+  <div class="wrap">
+    <div class="num">03 — Как проходит</div>
+    <h2>Работаем на ваших задачах, а примеры из учебника не берём</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="when">До встречи</div>
+        <h3>Опрос команды</h3>
+        <ul>
+          <li>Короткая форма: что каждый делает руками</li>
+          <li>Собираем 10–15 типовых рутин</li>
+          <li>Подбираем стек под правила компании</li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="when">2 часа</div>
+        <h3>Воркшоп</h3>
+        <ul>
+          <li>Как устроен агент: модель, инструменты, память</li>
+          <li>Наши рабочие кейсы из продакшна</li>
+          <li>Практика: каждый собирает своего агента</li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="when">2 недели после</div>
+        <h3>Поддержка</h3>
+        <ul>
+          <li>Запись и шаблоны настроек</li>
+          <li>Чат с ведущими: помогаем довести до работы</li>
+          <li>Разбор, что автоматизировать дальше</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="slide">
+  <div class="wrap split">
+    <div>
+      <div class="num">04 — Кто ведёт</div>
+      <h2>Ведут практики из ИИ-продакшна</h2>
+      <p class="lead" style="margin-top:0">Мы каждый день делаем рекламу, моушн и презентации с агентами. На воркшопе показываем свои рабочие сетапы.</p>
+    </div>
+    <ul class="list">
+      <li><b>Задачи креативных команд.</b> Брифы, ресайзы, ассеты, титры, правки, сдача. Общий курс промптинга не читаем.</li>
+      <li><b>Работающий результат.</b> Каждый участник уходит с настроенным агентом, слайды — только приложение.</li>
+      <li><b>Два стека.</b> Международный и российский контур, если внешние нейросети в компании запрещены.</li>
+      <li><b>Дальше — внедрение.</b> Можем не только научить, но и собрать конвейер под процесс команды.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="slide">
+  <div class="wrap case">
+    <div>
+      <div class="num">05 — Кейс</div>
+      <h2>Avito Design Team</h2>
+      <p class="muted" style="max-width:38ch">Воркшоп «Свой Джарвис за полтора часа» для дизайн-команды. Теория, кейсы и практика: участники собирали ассистента под свои задачи.</p>
+    </div>
+    <dl class="kv">
+      <dt>Команда</dt><dd>дизайнеры Авито</dd>
+      <dt>Участников</dt><dd>20–30</dd>
+      <dt>Длительность</dt><dd>1,5 часа</dd>
+      <dt>Когда</dt><dd>ноябрь 2026</dd>
+      <dt>Формат</dt><dd>теория → кейсы → практика</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="slide dark">
+  <div class="wrap">
+    <div class="num">06 — Внедрение</div>
+    <h2>Конвейер вокруг макета или ролика</h2>
+    <p class="lead" style="margin:-16px 0 40px">Агент не делает работу за дизайнера или монтажёра. Он забирает всё повторяемое вокруг неё. Пилот — один такой процесс, доведённый до работы.</p>
+    <div class="grid g2">
+      <div class="card"><h3>Адаптации</h3><div class="flow"><span>мастер</span><i>→</i><span>16:9 · 9:16 · 1:1</span><i>→</i><span>экраны любого размера</span></div></div>
+      <div class="card"><h3>Титры и текст</h3><div class="flow"><span>док титров</span><i>→</i><span>шаблон AE</span><i>→</i><span>рендер версий</span></div></div>
+      <div class="card"><h3>Правки пачкой</h3><div class="flow"><span>комменты клиента</span><i>→</i><span>таймкоды</span><i>→</i><span>чек-лист монтажёру</span></div></div>
+      <div class="card"><h3>Сборка проекта</h3><div class="flow"><span>ТЗ или преза</span><i>→</i><span>структура проекта</span><i>→</i><span>XML в монтажку</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="slide">
+  <div class="wrap">
+    <div class="num">07 — Форматы</div>
+    <h2>Начать можно с одной встречи</h2>
+    <div class="grid g3">
+      <div class="card price main">
+        <div><div class="tag">Старт</div><h3>Воркшоп «Свой агент»</h3><p>2 часа, до 30 человек. Опрос до встречи, запись, 2 недели чата поддержки.</p></div>
+        <div class="p">от 80 000 ₽</div>
+      </div>
+      <div class="card price">
+        <div><h3>Полный день</h3><p>Воркшоп плюс практика на задачах каждого отдела. До 30 человек.</p></div>
+        <div class="p">от 150 000 ₽</div>
+      </div>
+      <div class="card price">
+        <div><h3>Серия из 3–4 встреч</h3><p>Раз в неделю: от личного агента к командным сценариям. Чат на всё время.</p></div>
+        <div class="p">от 250 000 ₽</div>
+      </div>
+      <div class="card price">
+        <div><h3>Пилот автоматизации</h3><p>Один процесс команды: разбор, сборка сценария, запуск, инструкция.</p></div>
+        <div class="p">от 60 000 ₽</div>
+      </div>
+      <div class="card price">
+        <div><h3>Поддержка</h3><p>Новые сценарии, обновления под новые модели, ответы команде.</p></div>
+        <div class="p">от 30 000 ₽ <small>в месяц</small></div>
+      </div>
+      <div class="card price">
+        <div><h3>Для зарубежных команд</h3><p>Те же форматы на английском, стек Claude Code и ChatGPT.</p></div>
+        <div class="p">от $1 000</div>
+      </div>
+    </div>
+    <p class="note">Точную цену называем после короткого созвона: зависит от размера команды, стека и того, сколько задач разбираем на практике.</p>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="slide dark">
+  <div class="wrap">
+    <div class="num">08 — Данные и безопасность</div>
+    <h2>Работаем на стеке, который у вас разрешён</h2>
+    <div class="stack">
+      <div class="card">
+        <h3>Российский контур</h3>
+        <p>Модели GigaChat или YandexGPT, автоматизация на n8n на вашем сервере. Данные остаются внутри компании и не уходят за рубеж.</p>
+        <div class="chips"><span>GigaChat</span><span>YandexGPT</span><span>n8n у клиента</span></div>
+      </div>
+      <div class="card">
+        <h3>Международный стек</h3>
+        <p>Для агентств и команд, где разрешены зарубежные сервисы, и для зарубежных клиентов.</p>
+        <div class="chips"><span>Claude Code</span><span>ChatGPT</span><span>Codex</span><span>n8n</span></div>
+      </div>
+    </div>
+    <ul class="list" style="margin-top:28px">
+      <li><b>НДА до встречи.</b> Подписываем до того, как увидим ваши задачи и материалы.</li>
+      <li><b>Без клиентских данных на практике</b>, если так требует политика компании: собираем на обезличенных примерах.</li>
+      <li><b>Договор и закрывающие документы</b> для бухгалтерии и закупок.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="slide end">
+  <div class="wrap">
+    <div class="num">09 — Связаться</div>
+    <h2>Расскажите про команду — предложим программу под ваши задачи</h2>
+    <p class="lead">Созвон на 20 минут: кто в команде, какие задачи, какие нейросети у вас разрешены. После него пришлём программу и цену.</p>
+    <a class="btn" href="https://t.me/ranopostarel" target="_blank" rel="noopener">Написать в Телеграм</a>
+  </div>
+</section>
+
+<div class="counter" id="c">01 / 10</div>
+<script>
+  const s=[...document.querySelectorAll('.slide')], c=document.getElementById('c');
+  const pad=n=>String(n).padStart(2,'0');
+  const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)c.textContent=pad(s.indexOf(x.target)+1)+' / '+pad(s.length)}),{threshold:.5});
+  s.forEach(x=>io.observe(x));
+  addEventListener('keydown',e=>{
+    if(!['ArrowDown','ArrowUp','PageDown','PageUp'].includes(e.key))return;
+    e.preventDefault();
+    const y=scrollY+innerHeight/2, i=s.findIndex(x=>x.offsetTop<=y&&x.offsetTop+x.offsetHeight>y);
+    const n=Math.max(0,Math.min(s.length-1,i+(/Down/.test(e.key)?1:-1)));
+    s[n].scrollIntoView({behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
