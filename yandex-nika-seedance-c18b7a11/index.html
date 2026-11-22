@@ -1,0 +1,82 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Свои Плюсы · ТЗ на Seedance для Ники</title>
+<style>
+:root{--bg:#1b0b3a;--card:#24124a;--line:#3a2470;--ink:#f4efff;--mute:#b9a8e6;--acc:#ff5fa8;--lav:#b8a1ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#4a1f8a 0,transparent 60%),var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+header{padding:56px 0 24px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+h1{font-size:44px;line-height:1.05;margin:0 0 14px;letter-spacing:-.02em}h1 em{font-style:normal;background:linear-gradient(90deg,#ff5fa8,#b8a1ff);-webkit-background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--mute);margin:0 0 18px}header img{width:100%;border-radius:18px;display:block}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chips a{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--card);padding:8px 14px;border-radius:999px;font-size:14px}.chips a.main{background:var(--acc);border-color:var(--acc);color:#fff}
+section{padding:30px 0}h2{font-size:26px;margin:0 0 6px}.sub{color:var(--mute);font-size:14px;margin:0 0 16px}
+.goal{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;font-size:19px;line-height:1.45}.goal b{color:var(--acc)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}.box h3{margin:0 0 8px;font-size:17px}.box ul{margin:0;padding-left:18px}.box li{margin:4px 0}.box.no{border-color:#7a2a55}.box.no h3{color:var(--acc)}
+.emos{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.emo{font:inherit;text-align:left;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px;cursor:pointer}.emo b{display:block;margin-bottom:6px}.emo span{color:var(--mute);font-size:13px}.emo.on{border-color:var(--acc);background:#3a1660}
+.shot{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:18px}
+.shot video{width:100%;border-radius:12px;display:block;background:#000}.cap{color:var(--mute);font-size:13px;margin:8px 0 0}.shot h3{margin:0 0 12px;font-size:20px}
+.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}.refs figure{margin:0}.refs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block}.refs figcaption{font-size:12px;color:var(--mute);margin-top:4px}
+pre.prompt{white-space:pre-wrap;background:#120728;border:1px solid var(--line);border-radius:12px;padding:14px;font:12.5px/1.5 ui-monospace,Menlo,monospace;max-height:260px;overflow:auto;margin:0 0 10px}pre.prompt mark{background:#5a1f6e;color:#fff;border-radius:4px;padding:0 3px}
+.copy{font:inherit;font-size:14px;padding:9px 16px;border-radius:10px;border:0;background:var(--acc);color:#fff;cursor:pointer}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.steps div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}.steps div::before{counter-increment:s;content:counter(s);display:block;font-size:28px;font-weight:700;color:var(--acc);line-height:1;margin-bottom:8px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.gal img{width:100%;border-radius:10px;display:block}.gal figure{margin:0}.gal figcaption{font-size:12px;color:var(--mute);margin-top:4px}
+.files{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.files a{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--ink);text-decoration:none}.files a b{display:block}.files a span{color:var(--mute);font-size:13px}
+footer{color:var(--mute);font-size:13px;padding:30px 0 60px}
+@media(max-width:860px){header,.grid2,.shot{grid-template-columns:1fr}.emos{grid-template-columns:1fr 1fr}.steps,.gal,.files{grid-template-columns:1fr 1fr}h1{font-size:34px}}
+</style></head><body><div class="w">
+<header><div><h1>Свои Плюсы × Seedance<br><em>визуал и эмоции поверх 3D</em></h1>
+<p class="lead">Два рендера Тимура гоняем через Seedance 2.5 в режиме video edit. Натягиваем визуал из клиентского брифа и тестируем, какие эмоции нейронка налепит на морду ежа.</p>
+<div class="chips"><a class="main" href="https://drive.google.com/open?id=1TFE_8Zv5yo5aAZ5dno1qUNhwQNf8P546" target="_blank">Папка со всеми файлами</a><a href="#shots">Промпты</a><a href="#emo">Эмоции</a><a href="#brief">Бриф</a></div></div>
+<img src="a/kv_hedgehog_swim_coins.jpg" alt=""></header>
+
+<section><div class="goal">Задача: сохранить <b>движение, тайминг, камеру и силуэт</b> из 3D Тимура один в один, а сверху получить <b>картинку уровня клиентского KV</b>: пушистую лавандовую шерсть, глянцевые баллы с крестом, фиолетовое хранилище, тёплый свет. Параллельно ищем эмоции, которых нет на текущем лице: на лицевую анимацию в 3D ресурса нет, поэтому проверяем, что нейронка может дать поверх.</div></section>
+
+<section><div class="grid2"><div class="box"><h3>Держим</h3><ul><li>Голова — шар из мягких шипов, ушей нет.</li><li>Длинная тонкая морда, нос — чёрный шарик.</li><li>Рост около двух голов, короткие лапы.</li><li>Белая футболка с сиреневым крестом, тёмно-фиолетовые шорты.</li><li>Глаза узкие, полуприкрытые, зрачки мелкие, как в KV.</li></ul></div>
+<div class="box no"><h3>Брак</h3><ul><li>Большие «анимешные» глаза.</li><li>Улыбка во весь рот с зубами.</li><li>Уши, лисья треугольная голова, вытянутое тело.</li><li>Другое движение, поза или камера, чем в рендере.</li></ul></div></div></section>
+
+<section id="emo"><h2>Эмоции на тест</h2><p class="sub">Одна эмоция на прогон, начать с первых трёх. Нажми карточку, и она подставится в оба промпта ниже.</p><div class="emos"><button class="emo" data-k="bliss" data-en="blissful — eyes gently closed in pleasure, a soft closed-mouth smile, cheeks slightly lifted"><b>1. Блаженство</b><span>Глаза закрыты от удовольствия, мягкая закрытая улыбка, щёки чуть приподняты.</span></button><button class="emo" data-k="sly" data-en="sly — narrowed eyes, one brow raised, one corner of the mouth curled up showing a single small fang"><b>2. Хитрый</b><span>Прищур, одна бровь вверх, уголок рта поднят, виден один клык — как в KV.</span></button><button class="emo" data-k="dreamy" data-en="dreamy — half-lidded eyes gazing upward, a faint relaxed smile"><b>3. Мечтательный</b><span>Глаза полуприкрыты и смотрят вверх, едва заметная улыбка.</span></button><button class="emo" data-k="wink" data-en="playful wink — one eye closed, the other narrowed, a closed-mouth smirk"><b>4. Подмигивание</b><span>Один глаз закрыт, второй прищурен, ухмылка без зубов.</span></button><button class="emo" data-k="wow" data-en="pleasantly surprised — brows raised high, mouth in a small round &quot;o&quot;, eyes stay narrow with small pupils"><b>5. Приятное удивление</b><span>Брови вверх, рот маленькой «о», глаза остаются узкими.</span></button></div></section>
+
+<section id="shots"><h2>Шоты и промпты</h2><p class="sub">Seedance 2.5 · video edit · звук выкл · сначала черновики 480p по 1–2 на эмоцию, лучшие довести до 1080p.</p><article class="shot" id="s0050">
+ <div class="shot-media"><video src="a/0050.mp4" poster="a/0050.jpg" muted loop autoplay playsinline controls></video><p class="cap">Исходник Тимура · 0050 v003 · 1,2 с · активные баллы</p></div>
+ <div class="shot-body"><h3>Шот 0050 — Плывёт</h3>
+ <div class="refs"><figure><img src="a/kv_hedgehog_face.jpg"><figcaption>@image_1 · ёж из KV</figcaption></figure><figure><img src="a/kv_hedgehog_swim_coins.jpg"><figcaption>@image_2 · сцена из KV</figcaption></figure><figure><img src="a/model_sheet.jpg"><figcaption>@image_3 · моделька</figcaption></figure></div>
+ <p class="sub">@video_1 — этот рендер. Эмоция подставляется из выбранной карточки выше.</p>
+ <pre class="prompt" data-tpl="Strictly edit @video_1: restyle this 3D render into the final look of the client key art while keeping every frame of motion, timing, camera movement, pose and silhouette from @video_1 exactly as it is.
+REFERENCES: @image_1 is the hedgehog character and the visual source of truth for fur, face and colours. @image_2 defines the scene look: glossy pink and violet coins with a white cross, the violet steel vault, warm cinematic light. @image_3 is the model sheet that locks proportions.
+CHARACTER: the same hedgehog from @image_1 — a round head made of soft lavender spines, a long thin snout with a small black ball nose, narrow half-closed eyes with small pupils, a short stocky body about two heads tall, white T-shirt with a lilac cross, dark violet shorts with a red tag. Soft dense lavender fur with fine strands catching the light.
+FACE EXPRESSION: {EMO}, held calmly through the whole clip, small natural micro-movements of the brows and cheeks.
+SCENE: the hedgehog floats on its back across a sea of glossy pink and violet coins with a white cross, coins clink and roll around the body, light splashes of coins, the violet vault in the background, warm pink rim light and soft purple ambient light.
+CAMERA: identical to @video_1.
+LIGHT: soft warm key from the front, pink and violet rim light from the vault lamps, glossy highlights sliding over the coins.
+The hedgehog stays exactly the character from @image_1 with the same outfit throughout. No subtitles. No BGM."></pre>
+ <button class="copy">Скопировать промпт</button></div></article><article class="shot" id="s0060">
+ <div class="shot-media"><video src="a/0060.mp4" poster="a/0060.jpg" muted loop autoplay playsinline controls></video><p class="cap">Исходник Тимура · 0060 v003 · 1,4 с · щелчок монеткой</p></div>
+ <div class="shot-body"><h3>Шот 0060 — Лежит с монеткой</h3>
+ <div class="refs"><figure><img src="a/kv_hedgehog_face.jpg"><figcaption>@image_1 · ёж из KV</figcaption></figure><figure><img src="a/kv_hedgehog_dive_coins.jpg"><figcaption>@image_2 · сцена из KV</figcaption></figure><figure><img src="a/model_sheet.jpg"><figcaption>@image_3 · моделька</figcaption></figure></div>
+ <p class="sub">@video_1 — этот рендер. Эмоция подставляется из выбранной карточки выше.</p>
+ <pre class="prompt" data-tpl="Strictly edit @video_1: restyle this 3D render into the final look of the client key art while keeping every frame of motion, timing, camera movement, pose, hand action and silhouette from @video_1 exactly as it is.
+REFERENCES: @image_1 is the hedgehog character and the visual source of truth for fur, face and colours. @image_2 defines the scene look: glossy pink and violet coins with a white cross, the violet steel vault, warm cinematic light. @image_3 is the model sheet that locks proportions.
+CHARACTER: the same hedgehog from @image_1 — a round head made of soft lavender spines, a long thin snout with a small black ball nose, narrow half-closed eyes with small pupils, a short stocky body about two heads tall, white T-shirt with a lilac cross, dark violet shorts with a red tag. Soft dense lavender fur with fine strands catching the light.
+FACE EXPRESSION: {EMO}, held calmly through the whole clip, small natural micro-movements of the brows and cheeks.
+SCENE: the hedgehog lies relaxed in a pile of glossy pink and violet coins with a white cross and flicks one coin away with a finger exactly as in @video_1, the flicked coin spins and catches a bright highlight, nearby coins shift under its weight, the violet vault in the background.
+CAMERA: identical to @video_1.
+LIGHT: soft warm key from the front, pink and violet rim light from the vault lamps, glossy highlights sliding over the coins and on the spinning coin.
+The hedgehog stays exactly the character from @image_1 with the same outfit throughout. No subtitles. No BGM."></pre>
+ <button class="copy">Скопировать промпт</button></div></article></section>
+
+<section><h2>Порядок</h2><div class="steps"><div>Загрузить рендер как @video_1 и три картинки как @image_1–3 (вон они в карточке шота).</div><div>Выбрать эмоцию, скопировать промпт, прогнать черновик 480p.</div><div>Проверить морду по модельке: силуэт, глаза, без ушей. Не то — следующая эмоция.</div><div>Лучшие довести до 1080p и сдать: <code>0050_emo1_bliss_v01.mp4</code>.</div></div></section>
+
+<section id="brief"><h2>Визуал из брифа</h2><p class="sub">Эталон картинки: на это равняемся по шерсти, свету и баллам.</p>
+<div class="gal"><figure><img src="a/kv_hedgehog_face.jpg"><figcaption>Морда и характер</figcaption></figure><figure><img src="a/kv_hedgehog_swim_coins.jpg"><figcaption>Плывёт в баллах</figcaption></figure><figure><img src="a/kv_hedgehog_dive_coins.jpg"><figcaption>Ныряет, хранилище</figcaption></figure><figure><img src="a/m17b.jpg"><figcaption>Рендер-эталон модельки</figcaption></figure></div>
+<p class="sub" style="margin-top:18px">Бриф целиком</p><div class="gal"><figure><img src="a/brief_1.jpg"></figure><figure><img src="a/brief_2.jpg"></figure><figure><img src="a/brief_3.jpg"></figure><figure><img src="a/brief_4.jpg"></figure></div>
+<p class="sub" style="margin-top:18px">Моделька</p><div class="gal"><figure><img src="a/model_sheet.jpg"><figcaption>Лист поз</figcaption></figure><figure><img src="a/model_face.jpg"><figcaption>Морда</figcaption></figure><figure><img src="a/model_lying.jpg"><figcaption>Лёжа</figcaption></figure></div></section>
+
+<section><h2>Файлы</h2><div class="files"><a href="https://drive.google.com/open?id=1TFE_8Zv5yo5aAZ5dno1qUNhwQNf8P546" target="_blank"><b>Папка на Диске</b><span>рендеры, рефы KV, моделька, бриф PDF</span></a><a href="https://www.dropbox.com/scl/fo/9clmj4vzuuoqqtz9tfnbg/AHN7NqqyloPBtypm8kPxIV4?rlkey=5r5stfdjab21sq30t2rysd1yk&st=l08zlcf4&e=1&dl=0" target="_blank"><b>Исходник ежа с ригом</b><span>Blender, клиентский, Dropbox</span></a><a href="https://drive.google.com/open?id=1UoDN9ZC2XmhNxysQvDkJUxt5jDwmTSK4" target="_blank"><b>Прошлые генерации эмоций</b><span>Google Диск, папка проекта</span></a></div></section>
+<footer>CULT × Свои Плюсы · 23.11.2026</footer></div>
+<script>
+const emos=[...document.querySelectorAll('.emo')],pres=[...document.querySelectorAll('pre.prompt')];
+function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c])}
+function apply(en){pres.forEach(p=>{const t=p.dataset.tpl;p.dataset.cur=t.replace('{EMO}',en);p.innerHTML=esc(t).replace('{EMO}','<mark>'+esc(en)+'</mark>')})}
+emos.forEach(b=>b.onclick=()=>{emos.forEach(x=>x.classList.remove('on'));b.classList.add('on');apply(b.dataset.en)});
+emos[0].click();
+document.querySelectorAll('.copy').forEach((b,i)=>b.onclick=()=>{navigator.clipboard.writeText(pres[i].dataset.cur);b.textContent='Скопировано';setTimeout(()=>b.textContent='Скопировать промпт',1500)});
+</script></body></html>
