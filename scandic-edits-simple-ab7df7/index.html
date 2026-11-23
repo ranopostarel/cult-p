@@ -1,0 +1,48 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Скандик · правки клиента по экрану · 23.11</title><style>
+:root{--bg:#f4f5f8;--card:#fff;--ink:#17141f;--mute:#7a7886;--line:#e3e4ea;--acc:#203688;--ok:#1d9a5a;--todo:#203688;--ask:#d98a00;--no:#b43a3a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px 60px}
+header{padding:48px 0 16px}h1{font-size:30px;line-height:1.15;margin:0 0 8px;letter-spacing:-.015em}h1 small{display:block;font-size:15px;font-weight:400;color:var(--mute);margin-top:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 6px}.two figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}.two img{width:100%;display:block}.two figcaption{padding:8px 12px 10px;font-size:14px}.two figcaption b{display:block}.two figcaption span{color:var(--mute)}
+h2{font-size:20px;margin:34px 0 10px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-top:1px solid var(--line);font-size:15px}th{background:#f7f8fb;font-size:13px;color:var(--mute);font-weight:600;border-top:0}
+td:first-child{width:34px;color:var(--acc);font-weight:700}td.q{color:#3d3a46}td.q small{display:block;color:var(--mute);font-size:12px;margin-top:3px}td.d b{color:var(--acc)}
+.st{display:inline-block;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;color:#fff;white-space:nowrap}.st.ok{background:var(--ok)}.st.todo{background:var(--todo)}.st.ask{background:var(--ask)}.st.no{background:var(--no)}
+.box{background:var(--ink);color:#fff;border-radius:12px;padding:18px 22px;font-size:16px;line-height:1.5}.box ol{margin:6px 0 0;padding-left:22px}.box li{margin:4px 0}.box b{color:#ffd21f}
+.note{color:var(--mute);font-size:14px;margin:10px 0 0}
+@media(max-width:700px){.two{grid-template-columns:1fr}th:nth-child(4),td:nth-child(4){display:none}}
+</style></head><body><div class="wrap">
+<header><h1>Скандик · правки клиента по экрану в телефоне<small>Юля / Екатерина Большакова (Scandic) / Оля (агентство) · 19–23.11.2026 · собрано 23.11</small></h1>
+<div class="two">
+<figure><img src="img/old.jpg" alt=""><figcaption><b>Было, 19.11</b><span>То, по чему клиент писал правки 20.11.</span></figcaption></figure>
+<figure><img src="img/approved.jpg" alt=""><figcaption><b>Утверждено 23.11</b><span>Статика, которую выбрал клиент. Дальше анимируем её.</span></figcaption></figure>
+</div></header>
+
+<h2>Правки</h2>
+<table>
+<tr><th>№</th><th>Что сказал клиент</th><th>Что делаем</th><th>Статус</th></tr>
+<tr><td>1</td><td class="q">Экран внутри телефона не похож на награду: синяя размытая обводка, тусклые звёзды, «зимняя история». Нет ощущения «вау, он собрал всё».<small>20.11</small></td><td class="d">Экран переделан: белый фон, синий круг с галочкой, чёткая графика без размытия и обводок.</td><td><span class="st ok">сделано</span></td></tr>
+<tr><td>2</td><td class="q">Текст: обводку убрать или сделать аккуратной, примерить чёрный, сделать крупнее. Три строки, «ВСЮ» капсом и крупнее. Шрифт не похож на основной лайн, не жирный: Oswald Regular или Light.<small>19.11, 20.11, 23.11</small></td><td class="d">Чёрный текст Oswald Regular в три строки, «ВСЮ» синим и в два раза крупнее. Light в запасе.</td><td><span class="st ok">сделано</span></td></tr>
+<tr><td>3</td><td class="q">Сверху экрана добавить шапку, как в приложении Scandic.<small>20.11</small></td><td class="d">Шапка: стрелка назад, SCANDIC, счётчик звёзд.</td><td><span class="st ok">сделано</span></td></tr>
+<tr><td>4</td><td class="q">Звёзды: 5 штук над кругом, как на лого, а не по всему кругу. Могут вставать вокруг круга после галочки.<small>23.11</small></td><td class="d">В статике стоят 5 звёзд дугой. В анимации появляются после галочки и встают на свои места.</td><td><span class="st ok">сделано</span> <span class="st todo">анимация</span></td></tr>
+<tr><td>5</td><td class="q">Нужна праздничность: радость и торжественность, что собрал всю коллекцию. Звёздочки рассыпаются, салют. Эффект нужен, не только звёзды.<small>20.11, 23.11, реф Сбера</small></td><td class="d">Салют в момент появления галочки, короткий, золотой и синий. В финальном кадре его нет, финал = утверждённая статика.</td><td><span class="st todo">анимация</span></td></tr>
+<tr><td>6</td><td class="q">Переход со сканирования на экран победы топорный: белый экран просто появился. Идея клиента: галочка появляется ещё на экране скана, потом второй экран.<small>20.11, 23.11</small></td><td class="d">Делаем по идее клиента: галочка в конце скана, из неё раскрывается белый экран, элементы появляются по очереди.</td><td><span class="st todo">анимация</span></td></tr>
+<tr><td>7</td><td class="q">Эффект на кнопке SCNDC.RU с расплывающимися рамками смотрится плохо, нужна другая анимация клика.<small>20.11</small></td><td class="d">Рамки убираем. Клик как в интерфейсе: кнопка чуть сжимается и темнеет.</td><td><span class="st todo">анимация</span></td></tr>
+<tr><td>8</td><td class="q">Экран криво вставлен в телефон, особенно верхние углы.<small>20.11</small></td><td class="d">В новой статике экран сидит по маске ровно. В анимации проверяем углы на всех кадрах.</td><td><span class="st ok">сделано</span> <span class="st todo">проверить</span></td></tr>
+<tr><td>9</td><td class="q">Предложение Юли: галочка превращается в логотип «S», звёзды уезжают вбок, как на классическом лого.<small>23.11</small></td><td class="d">Показали статично 23.11. Если клиент выберет лого вместо галочки, пересобираем статику и анимацию под него.</td><td><span class="st ask">ждём клиента</span></td></tr>
+<tr><td>10</td><td class="q">Банку крупнее, кнопку меньше.<small>19.11</small></td><td class="d">Сделано в кадре.</td><td><span class="st ok">сделано</span></td></tr>
+</table>
+<p class="note">Банку, «РЕГИСТРИРУЙСЯ» и правую часть кадра не трогаем. Финальный кадр анимации совпадает с утверждённой статикой.</p>
+
+<h2>Закрыть с клиентом до анимации</h2>
+<div class="box"><ol>
+<li>Финальный кадр: галочка в круге (утверждено) или логотип «S» (п. 9)?</li>
+<li>Regular утверждён, Light больше не смотрим?</li>
+<li>Салют только в момент появления галочки, в финальном кадре его нет. Ок?</li>
+</ol><p style="margin:10px 0 0">Созвон с моушен-дизайнером, который предлагала Екатерина: нужен или смотрим готовую анимацию?</p></div>
+
+<h2>Вариант с лого «S» (п. 9)</h2>
+<div class="two"><figure><img src="img/logo_s_variant.jpg" alt=""><figcaption><b>Статика с логотипом вместо галочки</b><span>Отправлена Юле 23.11 для показа клиенту.</span></figcaption></figure></div>
+</div></body></html>
