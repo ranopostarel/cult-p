@@ -1,0 +1,130 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Скандик · экран победы · правки клиента к анимации · 23.11</title><style>
+:root{--bg:#f4f5f8;--card:#fff;--ink:#17141f;--mute:#7a7886;--line:#e3e4ea;--acc:#203688;--gold:#b48a3c;--ok:#1d9a5a;--todo:#203688;--ask:#d98a00;--no:#b43a3a}
+*{box-sizing:border-box}html,body{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{padding:56px 0 20px}h1{font-size:36px;line-height:1.12;margin:0 0 10px;letter-spacing:-.015em}h1 small{display:block;font-size:16px;font-weight:400;color:var(--mute);letter-spacing:0;margin-top:8px}
+.lead{font-size:18px;max-width:820px;margin:16px 0 0}.lead2{font-size:15px;color:var(--mute);max-width:820px;margin:10px 0 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.chips a{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--card);padding:7px 14px;border-radius:999px;font-size:14px}
+section{padding:36px 0 8px}h2{font-size:22px;margin:0 0 6px}.sub{color:var(--mute);font-size:14px;margin:0 0 18px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--mute);margin:0 0 18px}
+.st{display:inline-block;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;color:#fff;vertical-align:middle;white-space:nowrap}
+.st.ok{background:var(--ok)}.st.todo{background:var(--todo)}.st.ask{background:var(--ask)}.st.no{background:var(--no)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.two figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}.two img{width:100%;display:block}.two figcaption{padding:10px 14px 12px;font-size:14px}.two figcaption b{display:block}.two figcaption span{color:var(--mute)}
+article{display:grid;grid-template-columns:48px minmax(0,1.1fr) minmax(0,1fr);gap:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px;align-items:start}
+.num{font-size:28px;font-weight:700;color:var(--acc);line-height:1}article h3{margin:0 0 10px;font-size:18px;line-height:1.3}article h3 .st{margin-left:8px}article p{margin:0 0 8px}
+.task{background:#f6f7fb;border-radius:10px;padding:12px 14px;margin:8px 0 0}.task b{color:var(--acc)}.task ul{margin:6px 0 0;padding-left:20px}.task li{margin:2px 0}
+blockquote{margin:0 0 10px;padding:8px 12px;border-left:3px solid var(--gold);background:#fbf8f2;border-radius:0 8px 8px 0;font-style:italic;font-size:15px}blockquote cite{display:block;font-style:normal;font-size:12px;color:var(--mute);margin-top:4px}
+.pics{display:flex;gap:8px;flex-wrap:wrap}.pic{position:relative;flex:1;min-width:140px}.pic img{width:100%;display:block;border-radius:8px;border:1px solid var(--line)}.pic em{position:absolute;left:6px;bottom:6px;font-style:normal;font-size:11px;background:rgba(23,20,31,.8);color:#fff;padding:2px 6px;border-radius:5px}
+.goal{background:var(--ink);color:#fff;border-radius:14px;padding:22px 24px;font-size:17px;line-height:1.45;margin-top:6px}.goal b{color:#ffd21f}.goal ol,.goal ul{margin:8px 0 0;padding-left:22px}.goal li{margin:3px 0}
+.rules{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}.rules div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px}.rules b{display:block;margin-bottom:4px}
+footer{color:var(--mute);font-size:13px;padding:30px 0 50px}
+@media(max-width:800px){article{grid-template-columns:36px 1fr}article>.pics{grid-column:2}.two{grid-template-columns:1fr}.num{font-size:22px}}
+</style></head><body><div class="wrap">
+<header>
+<h1>Скандик · экран победы: правки клиента, собранные в задачи<small>Юля (Scandic / SODA, Екатерина Большакова, Оля из агентства) · Костя · 19–23.11.2026</small></h1>
+<p class="lead">Все комменты клиента по экрану в телефоне за 19–23.11 в одном месте: дословная цитата, что она значит для исполнителя в цифрах и элементах, статус. Исполнитель открывает страницу и делает, не переспрашивая.</p>
+<p class="lead2">Время цитат по МСК. Хрон экрана: шот после сканирования длится 2,6 с (65 кадров при 25 fps), финальный кадр анимации совпадает с утверждённой статикой один в один. Банку, «РЕГИСТРИРУЙСЯ» и правую часть кадра не трогаем.</p>
+<div class="chips"><a href="#base">Что утверждено</a><a href="#edits">Правки</a><a href="#decide">Вопросы клиенту</a><a href="#how">Как собирать правки</a></div>
+</header>
+
+<section id="base"><h2>Что утверждено на 23.11</h2><p class="sub">База для анимации. Всё, что ниже, делается поверх этого кадра.</p>
+<div class="two">
+<figure><img src="img/old_frame_19-11.jpg" alt=""><figcaption><b>Было: версия от 19.11</b><span>Синяя размытая обводка, тусклые звёзды, нет шапки приложения. Клиент: «не как награда, а какая-то зимняя история».</span></figcaption></figure>
+<figure><img src="img/chosen_navy_regular.jpg" alt=""><figcaption><b>Стало: статика, которую клиент выбрал 23.11, 14:58</b><span>Белый фон, шапка приложения, синий круг с галочкой, 5 золотых звёзд дугой над кругом, лок-ап «ТЫ СОБРАЛ / ВСЮ / КОЛЛЕКЦИЮ» в Oswald Regular, чёрный текст, «ВСЮ» синим. Юля: «вот это нрав».</span></figcaption></figure>
+</div>
+<div class="goal" style="margin-top:14px">Задача на следующий шаг: <b>анимация этого экрана</b>. Четыре правки в работу (п. 3–6), одна проверка (п. 7), одно предложение не берём (п. 8). Срок: Костя 23.11, 15:03: «попробуем сегодня, лучше завтра утро», то есть показ утром 24.11 (вт).</div>
+</section>
+
+<section id="edits"><h2>Правки</h2><p class="sub">Нумерация по порядку работы. Статусы:</p>
+<div class="legend"><span><span class="st ok">сделано</span> есть в утверждённой статике</span><span><span class="st todo">в работу</span> задача на анимацию</span><span><span class="st ask">вопрос</span> нужен ответ клиента до работы</span><span><span class="st no">не делаем</span> решение Кости</span></div>
+
+<article><div class="num">1</div><div>
+<h3>Лок-ап и шрифт: три строки, «ВСЮ» крупнее, Oswald Regular вместо жирного <span class="st ok">сделано</span></h3>
+<blockquote>текст ты собрал всю коллекцию нужно разделить на 3 строчки и слово «всю» написать капсом ВСЮ<cite>Оля из агентства, через Юлю · 19.11, 15:55</cite></blockquote>
+<blockquote>прямо не похож. Можем сделать похожим как у основного лайна? там же по сути тоже освальд<cite>Екатерина Большакова · 23.11, 11:43 (скрин от Юли 11:50)</cite></blockquote>
+<blockquote>вместо жирного на «ты собрал всю коллекцию»<cite>Юля · 23.11, 11:53, с гайдлайном шрифта Scandic</cite></blockquote>
+<div class="task"><b>Что это значит:</b> гайд Scandic — Oswald Medium / Regular / Light, интерлиньяж 115–120%. В статике стоит Regular, интерлиньяж 117%, все три строки одной ширины, «ВСЮ» в 2 раза крупнее соседних строк. В анимации текст не перенабирать: берём слои из статики как есть.</div>
+</div><div class="pics"><div class="pic"><img src="img/font_guide.jpg" alt=""><em>гайд шрифта от Юли</em></div><div class="pic"><img src="img/client_screen_23-11.jpg" alt=""><em>комменты клиента 23.11</em></div></div></article>
+
+<article><div class="num">2</div><div>
+<h3>Звёзды: 5 штук дугой над кругом, как на логотипе, а не кольцом <span class="st ok">сделано</span> <span class="st todo">в работу</span></h3>
+<blockquote>давайте в эту сторону пойдем, звездочки если над кругом сделать то может 5 штук как у нас на лого, а не по всему кругу? они могут после галочки например вокруг круга вставать<cite>Екатерина Большакова · 23.11, 11:42</cite></blockquote>
+<div class="task"><b>Статика:</b> 5 одинаковых золотых звёзд дугой над кругом, как над логотипом на банке, уже стоят.<br><b>Анимация:</b> звёзды появляются после галочки: вылетают из центра круга и встают на свои места дугой, по одной с шагом 1 кадр, каждая 0 → 120 → 100% масштаба. Финальное положение = статика.</div>
+</div><div class="pics"><div class="pic"><img src="img/chosen_navy_regular.jpg" alt=""><em>5 звёзд над кругом</em></div></div></article>
+
+<article><div class="num">3</div><div>
+<h3>Праздничность: салют в момент появления галочки <span class="st todo">в работу</span></h3>
+<blockquote>Звездочки не создают сейчас праздничного ощущения, может их сделать побольше, можно попробовать разного или просто не такими тусклыми. И может попробовать чтобы они появлялись по-другому… ощущения вот этого «вау он собрал все» его нет<cite>Екатерина Большакова, через Юлю · 20.11, 11:20</cite></blockquote>
+<blockquote>нужно передать радость и кайф и торжественность того что ты собрал всю коллекцию, поэтому они хотели чтобы звездочки мб рассыпались или еще чото что это символизирует<cite>Юля · 23.11, 10:26, с рефом (Сбер, «ипотека погашена»)</cite></blockquote>
+<blockquote>праздничные вот эти салютики нужно посмотреть как будут выглядеть на анимации, но этот эффект праздничный тоже нужен, не только звезды<cite>Юля · 23.11, 14:58</cite></blockquote>
+<div class="task"><b>Что делаем:</b> в момент, когда галочка дорисовалась, из центра круга разлетается салют: тонкие золотые и синие линии-искры и мелкие звёзды формы банки, 0,4–0,5 с (10–12 кадров), искры гаснут к краю. Из салюта остаются 5 звёзд дугой (п. 2). В финальном кадре салюта уже нет: клиент утвердил чистую статику. Реф по характеру: ролик Сбера, не снежинки, не конфетти-квадраты. Шапку и текст салют не перекрывает.</div>
+</div><div class="pics"><div class="pic"><img src="img/ref_fireworks.jpg" alt=""><em>реф Юли 23.11</em></div></div></article>
+
+<article><div class="num">4</div><div>
+<h3>Переход со сканирования на экран победы <span class="st todo">в работу</span></h3>
+<blockquote>галочка может появится еще на экране где банка и закончилось сканирование, а потом появится второй экран? Тут не уверена, но кажется что может быть неплохо. У нас очень топорный переход между экраном со сканированием и следующим<cite>Екатерина Большакова, через Юлю · 20.11, 11:20</cite></blockquote>
+<blockquote>у нас белый экран тупо появился и все… надо прикольное появление… ну и всех его элементов… обычно у них есть анимация на айфонах<cite>Юля · 23.11, 15:08–15:11</cite></blockquote>
+<div class="task"><b>Факт сейчас (версия 19.11):</b> сканирование до ~2,0 с, затем экран сменяется на белый одним кадром, галочка и текст проявляются вместе.<br><b>Что делаем:</b> приём клиента, «галочка сначала на экране скана».<ul>
+<li>Конец скана: над банкой в центре экрана появляется маленький синий круг с галочкой (галочка дорисовывается, 6 кадров).</li>
+<li>Круг растёт и уезжает на своё место из статики, белый фон заливает экран от круга наружу (10 кадров). Это и есть смена экрана: не склейка, а превращение.</li>
+<li>Дальше по порядку: шапка приложения проявляется (4 кадра), салют и звёзды (п. 3 и 2), текст строка за строкой: «ТЫ СОБРАЛ» снизу вверх на 40 px с проявлением, через 3 кадра «ВСЮ» ударом масштаба 130 → 100%, через 3 кадра «КОЛЛЕКЦИЮ» как первая.</li>
+<li>Весь переход от конца скана до собранного экрана: 0,8–1,0 с. Последние 1,2 с экран стоит, как в статике.</li></ul>
+Решение Кости нужно по одному пункту: трогаем ли предыдущий шот сканирования ради галочки на нём (см. вопросы ниже).</div>
+</div><div class="pics"><div class="pic"><img src="img/old_scan_end_1.7s.jpg" alt=""><em>сейчас: скан, 1,7 с</em></div><div class="pic"><img src="img/old_screen_appear_2.2s.jpg" alt=""><em>сейчас: экран появился, 2,2 с</em></div></div></article>
+
+<article><div class="num">5</div><div>
+<h3>Клик по кнопке SCNDC.RU: убрать расплывающиеся рамки <span class="st todo">в работу</span></h3>
+<blockquote>Эффект на кнопке справа с рамками расплывающимися как-то тоже плохо смотрится, тут нужно примерить другую анимацию когда клик происходит<cite>Екатерина Большакова, через Юлю · 20.11, 11:20</cite></blockquote>
+<div class="task"><b>Факт сейчас:</b> на клике (~4,0 с) от кнопки расходятся светящиеся кольца.<br><b>Что делаем:</b> колец и свечения нет. Нажатие: кнопка 100 → 94 → 100% масштаба за 5 кадров, заливка темнеет на 10–15% на время нажатия, курсор остаётся. Как нажатие кнопки в живом интерфейсе.</div>
+</div><div class="pics"><div class="pic"><img src="img/old_click_4s.jpg" alt=""><em>сейчас: клик, 4,0 с</em></div></div></article>
+
+<article><div class="num">6</div><div>
+<h3>Шапка приложения сверху экрана <span class="st ok">сделано</span></h3>
+<blockquote>сверху давайте еще добавим как вот тут scandic<cite>Екатерина Большакова, через Юлю · 20.11, 11:20, скрин приложения</cite></blockquote>
+<div class="task">Стрелка назад в сером квадрате слева, SCANDIC® по центру, звезда и счётчик «100» справа. В статике стоит. В анимации шапка статична с первого кадра белого экрана, как в живом приложении; опционально счётчик переключается 99 → 100 с подскоком, когда встают звёзды.</div>
+</div><div class="pics"><div class="pic"><img src="img/ref_app_header.jpg" alt=""><em>реф: приложение Scandic</em></div></div></article>
+
+<article><div class="num">7</div><div>
+<h3>Экран в телефоне: проверить верхние углы <span class="st todo">проверить</span></h3>
+<blockquote>как-то криво экран вставлен в телефон, особенно в верхних углах, очень не натурально выглядит<cite>Екатерина Большакова, через Юлю · 20.11, 11:20</cite></blockquote>
+<blockquote>экран фул не криво стоит идеально ровно, там где-то может чуть маску поправить можно<cite>Костя · 23.11, 15:07</cite></blockquote>
+<div class="task">В статике 23.11 экран сидит по маске со скруглением и Dynamic Island с плейта, вопрос снят. В анимации проверить покадрово все кадры с белым экраном (на белом щели заметнее): скругление верхних углов и зазор до рамки телефона. Трекинг экрана не переделываем.</div>
+</div><div class="pics"><div class="pic"><img src="img/old_frame_19-11.jpg" alt=""><em>версия 19.11: углы, о которых речь</em></div></div></article>
+
+<article><div class="num">8</div><div>
+<h3>Галочка превращается в логотип «S» со звёздами сбоку <span class="st no">не делаем</span></h3>
+<blockquote>Галочка появляется и вылетают звезды, а потом звезды уезжают в бок и галочка становится логотипом вот этим. Получится по хрону? Мне нравится, что звезды у нас есть, но они сейчас над галочкой сверху, у нас они на лого классическом сбоку<cite>Юля · 23.11, 15:06</cite></blockquote>
+<div class="task">Это предложение, не правка клиента: клиент 23.11 утвердил галочку в круге и 5 звёзд сверху. Костя 23.11, 15:08: «мы финал сейчас утверждаем, пробовать ничего не можем». Второе превращение в хрон 2,6 с не помещается без потери текста. Если клиент сам попросит, решает Костя отдельно.</div>
+</div><div class="pics"><div class="pic"><img src="img/logo_s.jpg" alt=""><em>лого «S» от Юли</em></div></div></article>
+
+<article><div class="num">9</div><div>
+<h3>Закрытые правки 19–20.11 <span class="st ok">сделано</span></h3>
+<blockquote>еще крупнее упаковку и меньше кнопку<cite>Оля из агентства, через Юлю · 19.11, 15:55</cite></blockquote>
+<blockquote>Давайте не будем делать синюю обводку так сильно размытой, она должна быть либо аккуратной, либо без нее. Если без нее то можем примерить наверное черный текст. И он должен быть больше<cite>Екатерина Большакова, через Юлю · 20.11, 11:20</cite></blockquote>
+<div class="task">Банка крупнее, кнопка меньше, обводки нет, текст чёрный и крупнее, фон экрана белый. Всё в утверждённой статике, в анимации не трогаем.</div>
+</div><div class="pics"></div></article>
+</section>
+
+<section id="decide"><h2>Вопросы, которые закрываем до передачи в анимацию</h2><p class="sub">Три к клиенту, один к Косте. Пока нет ответа, исполнитель работает по варианту «по умолчанию».</p>
+<div class="goal"><ol>
+<li><b>Клиенту:</b> финальный кадр = статика от 23.11 (белый фон, Regular)? Light больше не рассматриваем? <i>По умолчанию: да, Regular.</i></li>
+<li><b>Клиенту:</b> салют нужен только в момент появления галочки, в финальном кадре его нет. Ок? <i>По умолчанию: да.</i></li>
+<li><b>Клиенту:</b> переход со скана делаем через галочку на экране сканирования (их же идея от 20.11). Созвон с моушен-дизайнером нужен или смотрим готовый вариант? <i>По умолчанию: показываем готовый вариант.</i></li>
+<li><b>Косте:</b> галочка на экране скана трогает предыдущий шот. Делаем, или переход только внутри шота экрана (круг с галочкой появляется уже на белом, белый приходит мягким проявлением за 6 кадров)? <i>По умолчанию: полный вариант п. 4.</i></li>
+</ol></div>
+</section>
+
+<section id="how"><h2>Как собирать правки, чтобы исполнитель просто делал</h2><p class="sub">Схема одной карточки выше. Пять правил.</p>
+<div class="rules">
+<div><b>1. Цитата дословно, с автором и временем</b>Не пересказ «им не нравится появление», а слова клиента. Пересказ теряет смысл, а по цитате исполнитель сам видит, что человек хотел.</div>
+<div><b>2. Перевод в задачу: объект, параметр, значение, время</b>«Прикольное появление» не задача. Задача: какой элемент, что с ним происходит, сколько кадров, где в хроне, как выглядит финал.</div>
+<div><b>3. Факт «как сейчас» рядом с правкой</b>Кадр или секунда текущей версии, к которой коммент. Исполнителю не нужно угадывать, о каком месте речь.</div>
+<div><b>4. Статус у каждой правки</b>Сделано, в работу, вопрос, не делаем. Правки без статуса возвращаются в чат третий раз.</div>
+<div><b>5. Вопросы клиенту задать до передачи</b>Всё, что непонятно, уточняется у клиента до того, как исполнитель сел работать. Пока ответа нет, в задаче стоит вариант по умолчанию.</div>
+<div><b>Один документ вместо ленты в чате</b>Правки копятся в одном месте и обновляются, а не раскиданы по сообщениям за четыре дня. Ссылка одна, исполнитель открывает её, а не читает чат.</div>
+</div>
+</section>
+<footer>Скандик · Юля · собрано 23.11.2026 по чату и форвардам клиента.</footer>
+</div></body></html>
