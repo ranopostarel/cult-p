@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>«Коробка» — созвон 27.11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Literata:opsz,wght@7..72,400;7..72,500&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f1ea; --paper:#fbf9f4; --line:rgba(40,32,20,.10); --line2:rgba(40,32,20,.18);
+  --t1:#231f19; --t2:#5a5246; --t3:#8a8273;
+  --acc:#a8402a; --acc-soft:rgba(168,64,42,.08);
+  --serif:"Literata",Georgia,serif; --sans:"Golos Text",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;overflow-wrap:break-word;background:var(--bg);color:var(--t1);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header.top{padding:64px 0 40px;border-bottom:1px solid var(--line2)}
+.label{font:500 12px/1 var(--mono);color:var(--t3);letter-spacing:.02em}
+.stamp{display:inline-block;font:500 12px/1 var(--mono);color:var(--acc);border:1px solid var(--acc);border-radius:4px;padding:6px 8px;margin-bottom:24px}
+h1{font:500 64px/1.05 var(--serif);margin:0 0 16px;letter-spacing:-.01em}
+.lead{font:400 20px/1.5 var(--serif);color:var(--t2);max-width:720px;margin:0 0 32px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 32px;margin:0;padding:0;list-style:none}
+.facts li{display:flex;flex-direction:column;gap:4px}
+.facts b{font-weight:500}
+nav.toc{position:sticky;top:0;z-index:5;background:rgba(244,241,234,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav.toc .wrap{display:flex;gap:24px;overflow-x:auto;height:48px;align-items:center}
+nav.toc a{text-decoration:none;color:var(--t2);font-size:14px;white-space:nowrap}
+nav.toc a:hover{color:var(--t1)}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font:500 32px/1.2 var(--serif);margin:0 0 24px}
+h2 .label{display:block;margin-top:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px}
+.card h3{font:500 16px/1.4 var(--sans);margin:0 0 12px}
+ul.plain{margin:0;padding:0 0 0 18px}
+ul.plain li{margin:0 0 8px;color:var(--t1)}
+ul.plain li::marker{color:var(--t3)}
+.muted{color:var(--t2)}
+.small{font-size:14px}
+/* tasks */
+ol.tasks{list-style:none;margin:0;padding:0;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+.task{display:flex;justify-content:space-between;gap:24px;padding:16px 20px;border-top:1px solid var(--line)}
+.task:first-child{border-top:0}
+.task label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;flex:1}
+.task input{position:absolute;opacity:0}
+.box{flex:none;width:18px;height:18px;margin-top:3px;border:1.5px solid var(--line2);border-radius:4px;background:#fff;position:relative}
+.task input:checked+.box{background:var(--acc);border-color:var(--acc)}
+.task input:checked+.box::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
+.task input:focus-visible+.box{outline:2px solid var(--acc);outline-offset:2px}
+.task input:checked~.tt{color:var(--t3);text-decoration:line-through;text-decoration-color:var(--line2)}
+.task .meta{display:flex;gap:16px;align-items:baseline;flex:none;font-size:14px}
+.own{color:var(--t1);font-weight:500;width:88px}
+.due{color:var(--t2);width:232px}
+/* timecodes — signature */
+.tc{font:500 12px/1 var(--mono);color:var(--t2);background:var(--paper);border:1px solid var(--line2);border-radius:4px;padding:4px 6px;text-decoration:none;font-variant-numeric:tabular-nums;white-space:nowrap}
+a.tc:hover{color:var(--acc);border-color:var(--acc)}
+/* draft */
+.draft{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:4px 12px 12px 4px;padding:24px 28px}
+.draft p{font:400 18px/1.65 var(--serif);margin:0 0 16px}
+.draft p:last-child{margin:0}
+/* people */
+dl.people{display:grid;grid-template-columns:200px 1fr;gap:12px 24px;margin:0}
+dl.people dt{font-weight:500}
+dl.people dd{margin:0;color:var(--t2)}
+/* transcript */
+.tr{display:grid;grid-template-columns:220px 1fr;gap:48px}
+.tr aside{position:sticky;top:72px;align-self:start}
+.tr aside ol{list-style:none;margin:0;padding:0}
+.tr aside li{margin:0 0 8px}
+.tr aside a{display:flex;gap:8px;align-items:center;text-decoration:none;font-size:14px;color:var(--t2)}
+.tr aside a:hover{color:var(--t1)}
+h3.ch{font:500 22px/1.3 var(--serif);margin:40px 0 16px;display:flex;gap:12px;align-items:center}
+h3.ch:first-child{margin-top:0}
+.line{display:grid;grid-template-columns:56px 80px 1fr;gap:12px;padding:8px 0}
+.line .tc{justify-self:start;align-self:start;margin-top:4px}
+.who{font-size:14px;font-weight:500;padding-top:2px}
+.line p{margin:0}
+.s-t .who{color:var(--acc)}
+.s-m .who{color:#3f5a6b}
+.s-p .who{color:var(--t2)}
+details.raw{margin-top:48px;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+details.raw summary{cursor:pointer;padding:16px 20px;font-weight:500;list-style:none;display:flex;justify-content:space-between}
+details.raw summary::after{content:"+";font:500 16px var(--mono);color:var(--t3)}
+details.raw[open] summary::after{content:"−"}
+.rawbody{padding:0 20px 20px;font-size:15px;color:var(--t2)}
+.rawbody p{display:grid;grid-template-columns:64px 1fr;gap:12px;margin:0;padding:6px 0;border-top:1px solid var(--line)}
+.rawbody p .tc{justify-self:start;align-self:start}
+.rawbody p.hit{background:var(--acc-soft)}
+footer{padding:40px 0 64px;color:var(--t3);font-size:14px}
+@media (max-width:820px){
+  h1{font-size:44px}
+  .grid,.tr{grid-template-columns:1fr}
+  .tr aside{position:static}
+  .task{flex-direction:column;gap:8px}
+  .task .meta{padding-left:30px;flex-wrap:wrap;gap:8px 16px}
+  .due,.own{width:auto}
+  dl.people{grid-template-columns:1fr;gap:4px}
+  dl.people dd{margin-bottom:12px}
+  .line{grid-template-columns:56px 1fr}
+  .line p{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <span class="stamp">Созвон · 27.11 · ZOOM BOX_2711</span>
+  <h1>«Коробка»</h1>
+  <p class="lead">Документальный фильм о том, как парижский фотограф Таня нашла на рынке Алигр коробку с архивом кинодеятеля Игоря Гуськова — и решает, хватит ли её, чтобы снять кино.</p>
+  <ul class="facts">
+    <li><span class="label">Длительность</span><b>40 минут</b></li>
+    <li><span class="label">Участники</span><b>Таня, Милена, продюсер</b></li>
+    <li><span class="label">Задач</span><b>11</b></li>
+    <li><span class="label">Следующий созвон</span><b>следующая неделя</b></li>
+  </ul>
+</div></header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#summary">Коротко</a><a href="#tasks">Задачи</a><a href="#motivation">Мотивация</a><a href="#people">Люди</a><a href="#questions">Открытые вопросы</a><a href="#transcript">Расшифровка</a>
+</div></nav>
+
+<main class="wrap">
+
+<section id="summary">
+  <h2>Коротко</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>О чём говорили</h3>
+      <ul class="plain">
+        <li>Мотивация Тани: что она теряет, если не снимет фильм. Найти коробку — 1%, начать с ней работать — 99%.</li>
+        <li>Её рутина — квартира 13 м², дочь Саша, рынок Алигр, книжный магазин — может войти в фильм как есть.</li>
+        <li>Мотивация — ещё не арка. Арка — путь к пониманию, кем был Игорь.</li>
+        <li>Рабочее название — «Коробка», в презентации — «Box».</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>О чём договорились</h3>
+      <ul class="plain">
+        <li>Цепочка до презентации: друг Игоря (Сергей Васильев) → брат Игоря → юрист.</li>
+        <li>Брат нужен, чтобы понять отношение и права на материалы из коробки.</li>
+        <li>После — презентация и запрос денег на разработку, не на съёмки: чтобы Таня могла время платить за квартиру и заниматься проектом.</li>
+        <li>Следующий созвон — на следующей неделе, чтобы не терять темп.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="tasks">
+  <h2>Задачи <span class="label" style="display:inline;margin-left:8px">отметки сохраняются в этом браузере</span></h2>
+  <ol class="tasks">
+<li class="task"><label><input type="checkbox" data-k="t0"><span class="box" aria-hidden="true"></span><span class="tt">Написать Сергею Васильеву: готов ли к созвону и как выйти на брата Игоря</span></label><span class="meta"><span class="own">Таня</span><span class="due">27.11, сегодня</span><a class="tc" href="#raw" data-jump="2295">38:15</a></span></li>
+<li class="task"><label><input type="checkbox" data-k="t1"><span class="box" aria-hidden="true"></span><span class="tt">Дождаться ответа друга Игоря про контакт брата</span></label><span class="meta"><span class="own">Таня</span><span class="due">в работе</span><a class="tc" href="#raw" data-jump="1307">21:47</a></span></li>
+<li class="task"><label><input type="checkbox" data-k="t2"><span class="box" aria-hidden="true"></span><span class="tt">Прислать всем переписку с Сергеем, чтобы понять, насколько он открыт</span></label><span class="meta"><span class="own">Таня</span><span class="due">срок не назван</span><a class="tc" href="#raw" data-jump="1915">31:55</a></span></li>
+<li class="task"><label><input type="checkbox" data-k="t3"><span class="box" aria-hidden="true"></span><span class="tt">Составить список вопросов для Сергея — вместе</span></label><span class="meta"><span class="own">Все</span><span class="due">до созвона с Сергеем</span><a class="tc" href="#raw" data-jump="2190">36:30</a></span></li>
+<li class="task"><label><input type="checkbox" data-k="t4"><span class="box" aria-hidden="true"></span><span class="tt">Созвон с Сергеем: все вместе, если он не против, иначе Таня один на один с записью Zoom</span></label><span class="meta"><span class="own">Таня, все</span><span class="due">после ответа Сергея</span><a class="tc" href="#raw" data-jump="2116">35:16</a></span></li>
+<li class="task"><label><input type="checkbox" data-k="t5"><span class="box" aria-hidden="true"></span><span class="tt">Через Сергея познакомиться с братом Игоря: понять отношения и согласие на материалы</span></label><span class="meta"><span class="own">Таня</span><span class="due">после разговора с Сергеем</span><a class="tc" href="#raw" data-jump="1782">29:42</a></span></li>
+<li class="task"><label><input type="checkbox" data-k="t6"><span class="box" aria-hidden="true"></span><span class="tt">Спросить подругу-юриста по авторскому праву, есть ли знакомый юрист во Франции</span></label><span class="meta"><span class="own">Продюсер</span><span class="due">срок не назван</span><a class="tc" href="#raw" data-jump="2339">38:59</a></span></li>
+<li class="task"><label><input type="checkbox" data-k="t7"><span class="box" aria-hidden="true"></span><span class="tt">Собрать контакты юристов по авторскому праву во Франции</span></label><span class="meta"><span class="own">Милена</span><span class="due">срок не назван</span><a class="tc" href="#raw" data-jump="2329">38:49</a></span></li>
+<li class="task"><label><input type="checkbox" data-k="t8"><span class="box" aria-hidden="true"></span><span class="tt">Сформулировать текстом мотивацию Тани для презентации</span></label><span class="meta"><span class="own">Продюсер</span><span class="due">после расшифровки</span><a class="tc" href="#raw" data-jump="2199">36:39</a></span></li>
+<li class="task"><label><input type="checkbox" data-k="t9" checked><span class="box" aria-hidden="true"></span><span class="tt">Прислать расшифровку созвона</span></label><span class="meta"><span class="own">Милена</span><span class="due">готово — эта страница</span><a class="tc" href="#raw" data-jump="2362">39:22</a></span></li>
+<li class="task"><label><input type="checkbox" data-k="t10"><span class="box" aria-hidden="true"></span><span class="tt">Следующий созвон</span></label><span class="meta"><span class="own">Все</span><span class="due">следующая неделя, дата не назначена</span><a class="tc" href="#raw" data-jump="2243">37:23</a></span></li>
+  </ol>
+</section>
+
+<section id="motivation">
+  <h2>Мотивация Тани<span class="label">черновик для презентации, собран из её слов на созвоне</span></h2>
+  <div class="draft">
+    <p>Я приехала в Париж снимать. В 2014 году бренд Dolce &amp; Gabbana выложил нашу ростовскую съёмку, и я поехала на две недели по туристической визе — а осталась. Потом семья, ковид, война: около 80% крупных клиентов ушли. Сейчас квартира 13 метров, дочь три-четыре дня в неделю и съёмки пар под Эйфелевой башней — чтобы заплатить за жильё.</p>
+    <p>В этой рутине я случайно нашла на рынке Алигр коробку с архивом Игоря Гуськова: конверты с фотографиями, Сокуров, Лунгин, «Бьорк с улыбкой». Найти коробку — один процент. Девяносто девять — решиться что-то с ней сделать.</p>
+    <p>Если я упущу этот шанс, то и в своих глазах останусь просто мамой Саши, которая работает, чтобы её прокормить. Фильм — способ сказать себе и другим: я могу довести такую случайность до конца. Даже если мы покажем его в кафе у рынка, но дойдём до титров, — это уже будет значить, что я это сделала.</p>
+  </div>
+</section>
+
+<section id="people">
+  <h2>Люди и имена</h2>
+  <dl class="people">
+    <dt>Игорь Гуськов</dt><dd>Герой фильма, кинодеятель родом с Камчатки, его архив — в коробке. По некрологу, открыл европейскому кино Кантемира Балагова. Делал фестиваль на Волге и фестиваль русского кино в Таллине.</dd>
+    <dt>Таня</dt><dd>Нашла коробку. Фотограф в Париже, журналист и филолог по образованию.</dd>
+    <dt>Милена</dt><dd>В команде проекта. Летит на Камчатку по семейным делам — там родители.</dd>
+    <dt>Продюсер</dt><dd>В команде проекта, сейчас в Грузии. Делал проекты для Netflix, есть выход на Александра Роднянского.</dd>
+    <dt>Сергей Васильев</dt><dd>Дизайнер, друг Игоря, в Москве. Выложил видео с Игорем в инстаграме. Открыт к разговору: «у тебя будет многосерийный фильм».</dd>
+    <dt>Брат Игоря</dt><dd>Контакт пока ищут через друзей. От него зависят права на материалы.</dd>
+    <dt>Настя</dt><dd>Клиентка Тани, три года работала с Игорем, готова говорить.</dd>
+    <dt>Жанна Агалакова</dt><dd>В Париже, судя по всему близкий друг Игоря.</dd>
+    <dt>В архиве</dt><dd>Александр Сокуров (мастер Балагова), Павел Лунгин, Бьорк — по подписям на конвертах.</dd>
+  </dl>
+</section>
+
+<section id="questions">
+  <h2>Открытые вопросы</h2>
+  <div class="grid">
+    <div class="card">
+      <ul class="plain">
+        <li>Согласится ли Сергей говорить и в каком формате: со всеми или один на один.</li>
+        <li>Как выйти на брата Игоря, как он относится к брату и к фильму.</li>
+        <li>Кому принадлежат права на материалы из коробки.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <ul class="plain">
+        <li>Где найти юриста по авторскому праву во Франции и сколько это стоит.</li>
+        <li>Снимать ли что-то на Камчатке, пока там Милена, — не решили.</li>
+        <li>Дата следующего созвона.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="transcript">
+  <h2>Расшифровка<span class="label">чистовая версия: сокращены повторы и паузы, смысл и формулировки сохранены</span></h2>
+  <div class="tr">
+    <aside><ol>
+<li><a href="#ch1"><span class="tc">00:00</span>Что Таня теряет, если не снимет фильм</a></li>
+<li><a href="#ch2"><span class="tc">05:06</span>Рутина в кадре</a></li>
+<li><a href="#ch3"><span class="tc">07:49</span>Как Таня оказалась в Париже</a></li>
+<li><a href="#ch4"><span class="tc">17:52</span>Базовые потребности и шанс</a></li>
+<li><a href="#ch5"><span class="tc">21:43</span>Игорь и его друзья</a></li>
+<li><a href="#ch6"><span class="tc">26:42</span>Юрист и авторские права</a></li>
+<li><a href="#ch7"><span class="tc">28:49</span>План</a></li>
+<li><a href="#ch8"><span class="tc">35:16</span>Созвон с Сергеем</a></li>
+<li><a href="#ch9"><span class="tc">37:23</span>Следующие шаги</a></li>
+    </ol></aside>
+    <div>
+<h3 class="ch" id="ch1"><span class="tc">00:00</span>Что Таня теряет, если не снимет фильм</h3>
+<div class="line s-t"><span class="tc">00:00</span><span class="who">Таня</span><p>По вопросам, которые мне прислали. Первый: что я глобально теряю, если не займусь этим фильмом. Я много о нём думала.</p></div>
+<div class="line s-t"><span class="tc">00:41</span><span class="who">Таня</span><p>У меня довольно прозаичная жизнь, будем честны. Маленькая квартира, развод, ребёнок три-четыре дня в неделю, какие-то заказы. Этого хватает на оплату квартиры и еду. И в этой рутине я абсолютно случайно нахожу коробку. Игорь говорит про случайность и предопределённость — вот это оно. Я всё время повторяю, насколько безумно, что её нашёл не просто какой-то человек, а именно я.</p></div>
+<div class="line s-t"><span class="tc">01:45</span><span class="who">Таня</span><p>Но сейчас я понимаю: найти коробку — это один процент. Девяносто девять — начать с ней что-то делать. И в этом конфликт. Жизнь с работой, материнством и рутиной занимает все 24 часа, а нужно принять решение пойти за коробкой. Есть ли во мне та часть, которая готова на авантюру и начнёт снимать фильм? Я хочу понять это в процессе.</p></div>
+<div class="line s-p"><span class="tc">02:56</span><span class="who">Продюсер</span><p>Правильно понимаю, что ты никогда этого не делала?</p></div>
+<div class="line s-t"><span class="tc">03:00</span><span class="who">Таня</span><p>Никогда, никогда не снимала кино. Получить в руки что-то уникальное — одно. Начать с этим работать и сказать себе, что я ещё способна на эту авантюру, — другое. Если я упущу эту возможность и ничего не сделаю с коробкой, я упущу шанс выразиться как художник, как журналист — это моя первая специальность — и как человек, который способен довести такую серьёзную случайность до конца. Меня не столько интересует моя идентичность во французском обществе, сколько вопрос, могу ли я это сделать.</p></div>
+<div class="line s-p"><span class="tc">04:28</span><span class="who">Продюсер</span><p>Эти вещи напрямую связаны. Для тебя это шанс проявиться здесь.</p></div>
+<div class="line s-t"><span class="tc">04:48</span><span class="who">Таня</span><p>Если я его упущу, то даже в своих глазах останусь просто мамой Саши, которая что-то делает, чтобы её прокормить, и больше ничего.</p></div>
+<h3 class="ch" id="ch2"><span class="tc">05:06</span>Рутина в кадре</h3>
+<div class="line s-t"><span class="tc">05:06</span><span class="who">Таня</span><p>Небольшой кусочек моей рутины можно показать в фильме, тут ничего играть не надо. Квартира 13 квадратных метров, четыре раза в неделю приходит ребёнок, спим вместе на диване. На районе есть книжный магазин с детским отделом, куда ребёнку можно прийти одной, — у неё нет своей комнаты, и она ходит туда как в свою комнату. А я в это время иду на рынок Алигр поковыряться — там я однажды и нашла эту коробку.</p></div>
+<div class="line s-p"><span class="tc">06:50</span><span class="who">Продюсер</span><p>Ставка большая.</p></div>
+<div class="line s-t"><span class="tc">06:56</span><span class="who">Таня</span><p>Да, ставка большая. Амбиции, безусловно, есть. Но даже если я покажу фильм в кафе на районе людям, которые живут вокруг рынка Алигр, — если мы дойдём до титров, это уже супер. Это будет значить, что я это сделала. То, ради чего я когда-то сюда ехала.</p></div>
+<h3 class="ch" id="ch3"><span class="tc">07:49</span>Как Таня оказалась в Париже</h3>
+<div class="line s-t"><span class="tc">07:49</span><span class="who">Таня</span><p>Я ехала сюда снимать, а не замуж выходить и не ребёнка заводить. Хотела расширить профессиональные возможности. Не из-за 2014 года и Крыма — политическая повестка у меня тогда так не стояла, я была захвачена работой. В Ростове мы сняли проект на плёнку, модель была в Dolce &amp; Gabbana, и бренд выложил наши фото у себя в инстаграме. Я подумала: вау, а что я до сих пор бегаю по ростовскому ботаническому саду?</p></div>
+<div class="line s-t"><span class="tc">09:33</span><span class="who">Таня</span><p>Сделала обычную туристическую визу. Написала во ВКонтакте — у меня было 7 тысяч подписчиков, — что еду в Париж на две недели и буду рада поснимать всех желающих. Снимала так, что мозоль на лице от камеры натёрла. За три дня обошла Париж пешком и поняла, какие здесь перспективы: жизнь закручивается, людей и возможностей много, люди сами тебя находят. Поняла, что надо остаться любой ценой.</p></div>
+<div class="line s-p"><span class="tc">11:37</span><span class="who">Продюсер</span><p>Мысль, что здесь можно сделать карьеру, — оправдалась?</p></div>
+<div class="line s-t"><span class="tc">11:47</span><span class="who">Таня</span><p>Оправдалась, но в жизнь вклинилась другая сюжетная линия: я встретила человека, который сказал «давай строить семью». Я пошла в эту линию и пыталась балансировать с работой. Потом родила, начались ковидные годы, работы не стало.</p></div>
+<div class="line s-t"><span class="tc">12:31</span><span class="who">Таня</span><p>Были две блогерки из Хорватии с выходом на неделю моды — с ними я снимала Vivienne Westwood, попадала за кулисы к дизайнерам, к Alexandre Vauthier. В ковид они сами выпали и ушли из профессии. Потом война, и около 80% крупных клиентов сказали: «Мы будем кормить своих людей, извини». У меня тоже земля треснула, я стала браться за всё: съёмки пар под Эйфелевой башней и так далее. Это продолжается до сих пор. Теперь семейная линия закончилась, мы развелись, и в основном я думаю о том, как заплатить за квартиру.</p></div>
+<div class="line s-t"><span class="tc">14:26</span><span class="who">Таня</span><p>При этом внутри я остаюсь человеком, который любит классные возможности. Коробка для меня — супер-возможность сказать: я могу. Прийти и сказать: «Посмотрите, это сделала я. Я нашла коробку, нашла людей, подключились крутейшие люди, и мы вместе это сделали».</p></div>
+<div class="line s-t"><span class="tc">15:12</span><span class="who">Таня</span><p>Я каждый месяц живу так, что не до конца понимаю, чем платить за квартиру. Я мать, родила гражданку Франции, у меня здесь права и обязанности. Но как творческая единица я здесь кто? А приехала я именно как творческая единица.</p></div>
+<div class="line s-p"><span class="tc">16:13</span><span class="who">Продюсер</span><p>Ты приехала с французским или выучила его в процессе?</p></div>
+<div class="line s-t"><span class="tc">16:17</span><span class="who">Таня</span><p>В процессе. Даже багет по-французски купить не могла. Купила языковые курсы в Alliance Française, чтобы был повод остаться, но не ходила на них — было слишком много заказов. Работы и сейчас много. Вопрос, куда уходят деньги, и в том, что я не чувствую удовлетворения. Когда я стояла перед Vivienne Westwood, у меня тряслись поджилки. Когда открыла конверты, а там Бьорк с улыбкой, — тоже. А когда фотографирую парочку под Эйфелевой башней, ничего не трясётся: забрала 300 евро и пошла.</p></div>
+<h3 class="ch" id="ch4"><span class="tc">17:52</span>Базовые потребности и шанс</h3>
+<div class="line s-p"><span class="tc">17:52</span><span class="who">Продюсер</span><p>Творческая реализация — это супер важно, но важно ещё и просто выжить. У тебя обязанности перед дочерью. У меня нет детей, но меня тоже угнетает: в начале 2022 года я собирался брать ипотеку, был нормальный доход, мы делали проекты для Netflix. А теперь я четыре года в Грузии и каждый месяц не знаю, чем платить за квартиру. Это влияет на всё — даже на то, чтобы позвать кого-то на свидание. Это пирамида Маслоу, базовые потребности.</p></div>
+<div class="line s-t"><span class="tc">19:51</span><span class="who">Таня</span><p>Чтобы творить, нужна хорошая коммерческая база.</p></div>
+<div class="line s-p"><span class="tc">20:04</span><span class="who">Продюсер</span><p>И при этом мы берёмся за этот проект, созваниваемся, идём вместе. Ты не отказываешься от возможности. Для меня, думаю, и для Милены это тоже возможность — почва для более глубокого самовыражения, чем всё, за что мы берёмся ради денег. Я с Майей делаю кастинг для короткого метра — там почти нет денег, это ради титра, чтобы заметили.</p></div>
+<div class="line s-p"><span class="tc">21:22</span><span class="who">Продюсер</span><p>Это ещё не арка, это твоя мотивация. Арка будет, когда мы придём в точку Б — когда поймём, что Игорь был за человек.</p></div>
+<h3 class="ch" id="ch5"><span class="tc">21:43</span>Игорь и его друзья</h3>
+<div class="line s-t"><span class="tc">21:43</span><span class="who">Таня</span><p>Это мой следующий вопрос. Я написала другу Игоря, как найти его брата, жду ответа.</p></div>
+<div class="line s-p"><span class="tc">21:54</span><span class="who">Продюсер</span><p>Есть возможность пообщаться с кем-то из друзей Игоря, кто был близок, и задать ему список вопросов?</p></div>
+<div class="line s-t"><span class="tc">22:04</span><span class="who">Таня</span><p>Да, это Сергей Васильев, дизайнер, который выложил видео в инстаграме — я его вам сегодня прислала. Для меня это очень важное видео: впервые я увидела лицо Игоря и как он говорит. Я просто вбила в поиск «Игорь Гуськов» и узнала его по фотографиям. И он говорит те самые слова про случайность и предопределённость — они попали прямо в то, что я думаю про коробку.</p></div>
+<div class="line s-t"><span class="tc">23:31</span><span class="who">Таня</span><p>Я понимаю, что случайности недостаточно. Как филолог скажу: у этого слова даже нет точного определения. Тебя что-то туда привело.</p></div>
+<div class="line s-t"><span class="tc">24:22</span><span class="who">Таня</span><p>Я журналист по образованию и, честно, поговорить люблю больше, чем сделать. Очень люблю рассказывать про коробку: если иду на свидание, пусть готовится слушать про коробку.</p></div>
+<div class="line s-p"><span class="tc">25:16</span><span class="who">Продюсер</span><p>Мы так и назовём кино — «Коробка».</p></div>
+<div class="line s-t"><span class="tc">25:19</span><span class="who">Таня</span><p>У нас с Миленой в презентации так и написано — «Box». Но что я сделала за семь месяцев с тех пор, как её нашла? Слава богу, есть вы, прибавились люди, есть Серёжа Васильев. Но между коробкой и тем, чтобы начать снимать, ещё большой путь.</p></div>
+<div class="line s-p"><span class="tc">26:09</span><span class="who">Продюсер</span><p>Ты проговариваешь, чтобы сформулировать и сделать мысль осязаемой. Возможно, это просто твой способ воспринимать информацию, в этом нет ничего плохого.</p></div>
+<h3 class="ch" id="ch6"><span class="tc">26:42</span>Юрист и авторские права</h3>
+<div class="line s-t"><span class="tc">26:42</span><span class="who">Таня</span><p>Вот юрист, например, стоит денег. Знакомых юристов по этому праву у меня нет, оно очень специфическое. Я знакомлюсь с людьми, которые здесь снимают документальное кино на чужих материалах. Например, с режиссёром фильма про Гийома Депардьё: он использовал чужие интервью и материалы из сети, его вёл юрист по авторскому праву. Во Франции юрист, который консультирует документальный фильм, несёт ответственность наравне с тобой: если он сказал, что ты имеешь право на материал, а права не было, отвечаете оба. Но у меня нет денег на юриста.</p></div>
+<h3 class="ch" id="ch7"><span class="tc">28:49</span>План</h3>
+<div class="line s-p"><span class="tc">28:49</span><span class="who">Продюсер</span><p>Прежде чем делать презентацию, нужно ещё несколько шагов. Хорошо, что сегодня разобрали мотивацию. Теперь нужно понять героя, Игоря: провести хотя бы один созвон с кем-то из друзей, например с Сергеем. Параллельно у меня есть подруга-юрист, не французская, но я с ней посоветуюсь — возможно, у неё есть кто-то во Франции, кто проконсультирует бесплатно.</p></div>
+<div class="line s-p"><span class="tc">29:42</span><span class="who">Продюсер</span><p>Цепочка такая: интервью с другом, через друга контакт брата, предварительно познакомиться и понять, не против ли он. Материалы нам нужны, и хорошо бы использовать их, а не придумывать замену. Коробка и материалы — важнейший элемент истории. Итого: друг, брат, юрист.</p></div>
+<div class="line s-p"><span class="tc">30:16</span><span class="who">Продюсер</span><p>Всё это — чтобы сделать презентацию и пойти просить деньги на разработку, не на съёмки. Чтобы у тебя была возможность месяц платить за квартиру, покупать билеты и не так много заниматься основной работой, а уделить время проекту. Для презентации пока не хватает разговора с другом. И раз говорим с другом, выходим на брата — первое, что спросят: «У вас вообще есть на это права?»</p></div>
+<div class="line s-t"><span class="tc">31:22</span><span class="who">Таня</span><p>Да, надо понять его включённость и настроение. Может, он ненавидит брата. Кто он, чем живёт, что было между ним и Игорем. Если он категорически против, придётся думать об альтернативе.</p></div>
+<div class="line s-p"><span class="tc">31:44</span><span class="who">Продюсер</span><p>Созвон с Сергеем организуем вместе или ты сама? Насколько он открыт?</p></div>
+<div class="line s-t"><span class="tc">31:55</span><span class="who">Таня</span><p>Могу прислать переписку. Он очень открыт и рад, что всё спасено. Говорит: «Готовься, у тебя будет многосерийный фильм — столько людей захотят говорить об Игоре». Игорь был широко известен в узких кругах кино. Он отобрал в программу Кантемира Балагова — в некрологе так и написано: открыл европейскому кино русского режиссёра.</p></div>
+<div class="line s-p"><span class="tc">32:46</span><span class="who">Продюсер</span><p>Интересно. Карьерой Балагова отчасти занимается продюсер Александр Роднянский, у меня есть на него выходы — мы делали вместе проект. И у Балагова хорошая видимость в Европе.</p></div>
+<div class="line s-t"><span class="tc">33:11</span><span class="who">Таня</span><p>На фотографиях есть Сокуров — это мастер Балагова. Есть конверт с премьеры какого-то фильма Сокурова. По фото видно, что люди смотрят друг на друга как свои, на расслабоне, с бокалом шампанского, а не как на фотографа из журнала. То же с Лунгиным — масса фотографий. Видно, что в русском кино, которое везли в те годы, Игорь был своим человеком: делал фестиваль на Волге, фестиваль русского кино в Таллине.</p></div>
+<div class="line s-t"><span class="tc">34:17</span><span class="who">Таня</span><p>Моя клиентка Настя три года работала с Игорем, готова говорить. В Париже живёт Жанна Агалакова — они, видимо, были очень близкими друзьями. Когда Настя узнала, что я нашла коробку, она написала что-то вроде: «Может, ты отдашь коробку ей? Они его друзья, они этого заслуживают». Я ответила: извини, Настя, такого кино мы не снимаем.</p></div>
+<h3 class="ch" id="ch8"><span class="tc">35:16</span>Созвон с Сергеем</h3>
+<div class="line s-p"><span class="tc">35:16</span><span class="who">Продюсер</span><p>Поговори с другом. Если он не против, пообщаемся все вместе. Если ему неловко — один на один, но тогда надо записать Zoom.</p></div>
+<div class="line s-t"><span class="tc">35:30</span><span class="who">Таня</span><p>Я уже купила платный Zoom. Там даже есть функция отчёта с помощью ИИ — для меня это было откровением.</p></div>
+<div class="line s-p"><span class="tc">36:00</span><span class="who">Продюсер</span><p>План такой. Понимаем, когда он может пообщаться. Если готов и не против — все вместе, если против — ты один на один. Готовим список вопросов, все вместе. Если он близкий и готов, начинаем с него.</p></div>
+<div class="line s-p"><span class="tc">36:39</span><span class="who">Продюсер</span><p>Милена, сможешь потом кинуть не запись, а расшифровку разговора, чтобы она была у каждого? Хочу сформулировать текстом всё, что мы проговорили про мотивацию Тани, — это понадобится для презентации.</p></div>
+<div class="line s-m"><span class="tc">36:56</span><span class="who">Милена</span><p>Да, сделаю. В этот раз у меня что-то не сработало, но закину через Claude, через коллег. Сам файл тоже закину.</p></div>
+<h3 class="ch" id="ch9"><span class="tc">37:23</span>Следующие шаги</h3>
+<div class="line s-p"><span class="tc">37:23</span><span class="who">Продюсер</span><p>Следующий созвон можно на следующей неделе, чтобы не сбивать темп.</p></div>
+<div class="line s-m"><span class="tc">37:29</span><span class="who">Милена</span><p>Единственное — я улетаю на Камчатку на пару дней по семейным делам.</p></div>
+<div class="line s-t"><span class="tc">37:34</span><span class="who">Таня</span><p>Милена, он же с Камчатки, Игорь! Ты ничего там не подснимешь?</p></div>
+<div class="line s-m"><span class="tc">37:46</span><span class="who">Милена</span><p>Можем потом это обсудить. По России перелёт не такой дорогой. У меня родители оттуда.</p></div>
+<div class="line s-p"><span class="tc">38:15</span><span class="who">Продюсер</span><p>Тогда сегодня пишешь Сергею, узнаём у него про брата, понимаем, в каком они настроении, и от этого разговора отталкиваемся насчёт следующего созвона или встречи.</p></div>
+<div class="line s-m"><span class="tc">38:29</span><span class="who">Милена</span><p>А где он находится? — В Москве. — Ну так нормально, поеду к нему.</p></div>
+<div class="line s-m"><span class="tc">38:49</span><span class="who">Милена</span><p>По юристу я тоже могу узнать. Боюсь, бесплатного не найдём, но соберём контакты и поймём, кто лучший.</p></div>
+<div class="line s-p"><span class="tc">38:59</span><span class="who">Продюсер</span><p>У меня подруга занимается авторским правом. Сейчас живёт в Израиле, стала израильским юристом, но работает удалённо на Москву. Возможно, у неё есть кто-то во Франции, уточню.</p></div>
+<div class="line s-m"><span class="tc">39:22</span><span class="who">Милена</span><p>Через пару часов пришлю расшифровку.</p></div>
+<div class="line s-t"><span class="tc">39:30</span><span class="who">Таня</span><p>А я напишу Сергею и буду скидывать вам новости. Спасибо гигантское.</p></div>
+      <details class="raw" id="raw">
+        <summary>Полная автоматическая расшифровка, без правок</summary>
+        <div class="rawbody">
+<p><a class="tc" href="#t0" id="t0">00:00</a>Так, ну что? Ребят, по вопросам, которые мне, значит, прислала Родион. Первый вопрос, это был вопрос, что я потеряю, что я глобально теряю, если я не занимаюсь, как бы, этим фильмом.</p>
+<p><a class="tc" href="#t20" id="t20">00:20</a>Да? Был такой вопрос.</p>
+<p><a class="tc" href="#t26" id="t26">00:26</a>Вот. Значит, я много о нем думала.</p>
+<p><a class="tc" href="#t33" id="t33">00:33</a>Короче, как сказать?</p>
+<p><a class="tc" href="#t41" id="t41">00:41</a>Вот в этой всей рутине жизни, достаточно прозаичной, как бы честно, будем честны, которая у меня есть,</p>
+<p><a class="tc" href="#t52" id="t52">00:52</a>да, там маленькая квартира, развод, ребенок, там, три раза в неделю или четыре раза в другую неделю, какие-то заказы, да, которые ко мне приходят, и, честно говоря, этого хватает на оплату квартиры и на еду.</p>
+<p><a class="tc" href="#t74" id="t74">01:14</a>Я нахожу эту коробку абсолютно случайно. Вот Игорь там говорит, случайность и предопределенность. Вот я нахожу случайно эту коробку, Я как бы сразу понимаю, что это какая-то вау, какая случайность. Я всё время об этом говорю, даже когда с вами разговариваю, и даже с другими людьми. Я постоянно указываю на то, насколько крейзи было найти эту коробку не просто какому-то человеку, а вот именно мне найти её. Но я сейчас сталкиваюсь с тем, что найти эту коробку, эту случайность в руки взять, этого очень мало. Это вообще 1% от всего.</p>
+<p><a class="tc" href="#t119" id="t119">01:59</a>А 99% это начинать с этой коробкой что-то делать. И тут конфликт в том находится, что за вот этой жизнью, в которой есть работа, материнство, какая-то рутина, которая занимает 24 часа дня моего,</p>
+<p><a class="tc" href="#t142" id="t142">02:22</a>как бы понимаешь, принять вот это решение, пойти за этой коробкой и что-то делать, связанное с ней.</p>
+<p><a class="tc" href="#t152" id="t152">02:32</a>Я не знаю, достаточно ли этого для той самой арки, которая... Но...</p>
+<p><a class="tc" href="#t162" id="t162">02:42</a>Понимаешь? Та часть меня, которая готова пойти в авантюру, как бы, начинать снимать фильм, она вообще существует? Я хочу это понять В процессе Понимаешь? Но подожди, я же правильно понимаю, что ты никогда этого не делала? Никогда этого не делала, никогда Никогда не снимала кино И я тут понимаю, что Как бы получить В руки что-то уникальное Это один момент А начать с этим работать, что-то делать Идти как бы в этот проект Сказать себе, я еще как бы на эту авантюру, грубо говоря, способна,</p>
+<p><a class="tc" href="#t203" id="t203">03:23</a>это ну как бы другой момент. И где кроется как бы зерно этой мысли? В том, что если я эту возможность упущу и ничего не сделаю с этой коробкой. Я упущу возможность выразиться как художник, как бы, как журналист,</p>
+<p><a class="tc" href="#t240" id="t240">04:00</a>что моя специальность первая, как художник, как человек, который способен такую серьёзную случайность довести до конца.</p>
+<p><a class="tc" href="#t254" id="t254">04:14</a>Как бы меня здесь не только и не настолько интересует вопрос моей там какой-то идентичности во французском обществе, как меня интересует вопрос, могу ли я это сделать.</p>
+<p><a class="tc" href="#t268" id="t268">04:28</a>Так эти вещи напрямую связаны. Ну, в смысле, как бы для тебя это шанс как бы сформулировать.</p>
+<p><a class="tc" href="#t279" id="t279">04:39</a>Проявиться здесь. Ну, проявиться, да. Ну, да, да, да, да. Да, который...</p>
+<p><a class="tc" href="#t288" id="t288">04:48</a>Ну, если я его упущу, значит, я останусь для себя даже в своих собственных глазах вот мамой Саши реально просто, которая что-то делает, чтобы ее прокормить в жизни и больше ничего не делает.</p>
+<p><a class="tc" href="#t306" id="t306">05:06</a>Ну, как бы там, можно ли это показать в фильме, да? Но это не сложно В фильме показать Какой-то показать Небольшой кусочек моей собственной рутины Возможно, да Потому что Если я Просто режиссер Я ставлю просто на место человека Который показывает Вот этот момент, понимаешь То тут сложно что-то сыграть. Тут есть квартира 13 метров квадратных, в которой тусую я, в которой 4 раза в неделю приходит ребенок, грубо говоря,</p>
+<p><a class="tc" href="#t353" id="t353">05:53</a>вместе спим на этом диване. Тут кринжа наваливать даже не надо. Вот тут вот.</p>
+<p><a class="tc" href="#t361" id="t361">06:01</a>Понимаешь?</p>
+<p><a class="tc" href="#t364" id="t364">06:04</a>Грубо говоря, ну вот, будем честны, на шоссе какая-то активность с малой, Это то, что она идет в книжный магазин, там есть книжный магазин на районе, в котором детский отдел, и туда разрешено ребенку прийти посидеть самому, он такой небольшой, камерный. У него нет своей комнаты, она туда идет как в свою комнату, там куча книг она может брать, сидеть, читать. А я в это время иду на этот рынок Алигр поковыряться, где я однажды нашла эту самую коробку, которая и случайность, и предопределенность.</p>
+<p><a class="tc" href="#t407" id="t407">06:47</a>Окей.</p>
+<p><a class="tc" href="#t409" id="t409">06:49</a>Что скажешь? Ну, мне кажется, ну да, ну да, но ставка большая. Да, ставка большая. Если я ничего не сделала с этой коробкой, я как бы, даже если, понимаешь, я гориллом Милене, говорю тебе, говорю себе, как бы, есть, безусловно, амбиции. Но даже если я покажу этот фильм в кафешке на районе, вот этим людям, которые живут вокруг этого рынка Олигр, грубо говоря, да? Ну, для меня это уже по-своему, как бы, ну, не то, что enough, не то, что этого достаточно, но это уже для меня. Если я доведу вообще до конца, если мы до титров дойдём, это супер просто.</p>
+<p><a class="tc" href="#t455" id="t455">07:35</a>Я, как бы, ну, не то, что тут не вопрос уважения к себе, а как это правильно выразить. Это будет значить, что я это сделала, как бы.</p>
+<p><a class="tc" href="#t469" id="t469">07:49</a>понимаешь что то ради чего я сама когда-то ехала сюда вот я ехала сюда снимать я не ехала замуж выходить я не ехала там ребенка заводить я ехала что мне хотелось свои возможности расширить профессиональные не потому что в четырнадцатом году не потому что не потому что россия Крым отжала, я уезжала сюда. Я уезжала сюда, потому что мне хотелось новых горизонтов в жизни. Ну, наверное, как бы то, что Россия отжала Крым, это просто стало, типа, поводом. Да вообще нет. У меня в голове этого не было даже.</p>
+<p><a class="tc" href="#t514" id="t514">08:34</a>Просто совпало, что, типа, ты давно хотела и... Да.</p>
+<p><a class="tc" href="#t519" id="t519">08:39</a>Этого даже в голове не было у меня. Для меня политическая повестка в жизни так не стояла, как бы. если честно между нами говорить.</p>
+<p><a class="tc" href="#t531" id="t531">08:51</a>Я была так захвачена своей работой. Меня там... Мы в Ростове сняли проект, а наши фотки в 2014 году. Только Инстаграм, как бы после ВКонтакте только Инстаграм начинался. Мы отсняли проект в Ростове, модель одели в Дольче Габана. И я снимала на пленку этот проект. И Дольче Габана приложили наши фотки у себя в Инстаграме. Снятые для этой... Я подумала, бляха-муха, вау! А что я тут по ботаническому саду ростовскому бегаю до сих пор?</p>
+<p><a class="tc" href="#t563" id="t563">09:23</a>Мне надо что-то делать, мне надо куда-то ехать. Мне надо что-то делать. И мы там ездили в Стамбул, там что-то такое. Никогда в Европу не ездили. И я пошла и сделала себе визу.</p>
+<p><a class="tc" href="#t576" id="t576">09:36</a>Визу испанскую, что ли? Типа визу таланта? Нет, просто визу туристическую. Или просто туристическую. Да. И я, значит, посмотрела еще концерт рэпера моего любимого.</p>
+<p><a class="tc" href="#t593" id="t593">09:53</a>Что-нибудь для портфолио еще сделаю. Я на странице на своей ВКонтакте написала, что, ну, мало ли, думаю, какой-нибудь один человек, девчоночка какая-нибудь там. Говорю, я еду в Париж на две недели, я вот буду рада поснимать всех желающих.</p>
+<p><a class="tc" href="#t608" id="t608">10:08</a>У меня было 7 тысяч человек ВКонтакте. Это было много для ВКонтакта. Инстаграм тогда еще только-только начинался.</p>
+<p><a class="tc" href="#t616" id="t616">10:16</a>Да я снимала, я мозоль себе на лице натерла фотоаппаратом. Две недели, как приехала, я Париж обошла пешком. За первые три дня уже знала его как облупленный. Я поняла, что здесь такие перспективы. Мне написали какие-то девчонки там.</p>
+<p><a class="tc" href="#t633" id="t633">10:33</a>Пардон, вылетело все. Извините. На самом интересном месте. И тут же влетела обратно. Да, все нормально. Я про то, что я сразу поняла, что здесь какая-то жизнь закручивается, что здесь очень много людей, здесь много возможностей, здесь сразу люди находят тебя.</p>
+<p><a class="tc" href="#t653" id="t653">10:53</a>Но... И все, я поняла, что я еще сходила на этот концерт, этот рэпер мне расписался на загранпаспорте. У меня загранпаспорт этот, он просто... Слушай, прости, ты сказала но, Ты сказала «но», и я не услышал дальше «но», «но» что? Здесь тебя люди находят, здесь возможности, но...</p>
+<p><a class="tc" href="#t678" id="t678">11:18</a>Здесь меня люди находят, здесь куча возможностей, но... Но ничего, и я поняла, что надо как-то оставаться любой ценой здесь.</p>
+<p><a class="tc" href="#t695" id="t695">11:35</a>Ну, любой ценой. Вот эта мысль, с которой ты ехала, что это возможность сделать карьеру, это в какой-то степени оправдалось? Оправдалось. Оправдалось, но... Но... Как бы, как тебе сказать? Вот.</p>
+<p><a class="tc" href="#t720" id="t720">12:00</a>Оправдалось, но... Другая сюжетная линия вклинилась в мою жизнь. Это то, что я встретила человека, который мне сказал, давай строить семью, давай делать детей.</p>
+<p><a class="tc" href="#t732" id="t732">12:12</a>И как бы я пошла в эту сюжетную линию, пытаясь сбалансировать в работе.</p>
+<p><a class="tc" href="#t744" id="t744">12:24</a>Потом, и еще когда я с Ашурой родила, ковидные годы начались. И работы вообще не стало. Все те возможности, которые я успела. там, например, ну, грубо говоря, да, вот быстро вам, чтобы объяснить, были две блогерки, которые были из Хорватии, девчонки, у них был классный выход на неделю моды, вот я с ними Вивен Вестфуд поснимала, что Игорь же снимал, Вивен Вестфуд тоже, там попала к дизайнерам, к таким в закулисе, там, Элиса, Александр Ватье, на Александра Ватье ходит там жена президента, например, на показы, Моника Билович, все ходят, то есть, и семьяки, они открыли мне двери, А когда случился ковид, они сами выпали. Они в такую депрессию попали, эти девки.</p>
+<p><a class="tc" href="#t789" id="t789">13:09</a>Одна там себе волосы вычесала, полголовы себе волос. И просто сказали, все, мы поняли, что мир у нас под ногами треснула земля. Мы больше не хотим этим заниматься. И я как бы, и вот так вот множество клиентов. А потом, оп, война. И все мои там украинцы, которые там... Ну, это произошло. Я как бы, ну... Это просто я говорю о том, что произошло. Они там сказали, ну не все, кстати, но 80% крупных моих клиентов сказали, мы будем кормить наших людей, извини. А кто-то вот после ковида выпал там. И у меня у самой, понимаешь, у меня у самой земля тоже треснула. И я стала браться просто за всё. Какие-то съёмки под эфилевой башней</p>
+<p><a class="tc" href="#t836" id="t836">13:56</a>для будущей молодой семейной пары, окей. какие-то там, и это продолжается до сих пор. А сейчас вот эта линия семейная выпала, я остался одна, мы развелись, и реально мои сейчас мысли в основном, что я пыталась тебе сказать, вот сейчас вот, когда начала вообще говорить. Мои мысли в основном, это мысли о том, как вот заплатить за квартиру, да, это какая-то штучка про пропитание. Несмотря на то, что я внутри себя остаюсь человеком, который любит, как бы, классный оппортюнити, да? И эта коробка для меня, это супер оппортюнити.</p>
+<p><a class="tc" href="#t879" id="t879">14:39</a>Сказать, я могу это сделать. Не просто пойти каких-то ребят с Эйфелевой башней на фоне поснимать, которых попрошу поцеловаться, обняться, это все просто для меня, как бы.</p>
+<p><a class="tc" href="#t891" id="t891">14:51</a>А прийти и сказать, ребят, посмотрите, вот это сделала я. Я нашла коробку, я нашла людей, я до них шла, подключились вот эти люди крутейшие, и мы все вместе вот это долбанули, понимаешь?</p>
+<p><a class="tc" href="#t912" id="t912">15:12</a>Очень тебя понимаю по поводу мыслей, чем платить за квартиру.</p>
+<p><a class="tc" href="#t916" id="t916">15:16</a>Вот мне 2-го числа платить за квартиру, я еще не до конца понимаю, чем я буду платить за квартиру. Понимаешь, я каждый месяц так живу. Если какой-то крупный там попадает заказ мне в руки, я тут же его там вывожу куда-то и блокирую, звоню банку, что даже если я буду вас просить, умолять на коленях стоять, вы мне не отправляйте, потому что мне надо заплатить за квартиру. Не-не-не.</p>
+<p><a class="tc" href="#t941" id="t941">15:41</a>Понимаю. Как бы вот этой штуки, когда ты мне говоришь, как бы там в их обществе появить, как бы, ну вот, там, ну как бы, я уже там мать, я уже там французскую гражданку родила, Я знаю, что у меня тут есть права. У меня есть права и обязанности.</p>
+<p><a class="tc" href="#t962" id="t962">16:02</a>Но как творческая единица здесь я кто?</p>
+<p><a class="tc" href="#t969" id="t969">16:09</a>Я приехала сюда как творческая единица.</p>
+<p><a class="tc" href="#t973" id="t973">16:13</a>Танюша, ты к русским языком приехала туда? Или ты выучила в процессе его? Выучила в процессе. Вообще не могла даже я и багет купить по-французски, когда приехала сюда. Бонжур, орва. И то, о-р-вар. Как это слово произнести, и как оно писалось, я не знала. Что это до встречи буквально. Ну, вообще по нулям. И когда я только приехала, я взяла, купила как бы курсы языковые, чтобы был повод остаться. То есть как бы студенческую мне сделали. Алианс Францесс, вот эта вот была организация. Она на Россию много работала. А я не сходила на их курсы.</p>
+<p><a class="tc" href="#t1015" id="t1015">16:55</a>Потому что я работала и тоже была занята тем, что у меня было очень много заказов.</p>
+<p><a class="tc" href="#t1025" id="t1025">17:05</a>Их и сейчас много. Работы много. Вопрос в том, куда уходят эти деньги. И вопрос в том, что я не чувствую в этом сатисфекшена зачастую.</p>
+<p><a class="tc" href="#t1035" id="t1035">17:15</a>Вот как бы я не чувствую, что я проявляюсь на свой потенциал, понимаешь?</p>
+<p><a class="tc" href="#t1040" id="t1040">17:20</a>Когда Вивен Весту снимала, когда перед Вивен Весту стояла, Я понимала, что я проявляюсь на свой потенциал, что у меня поджилки трясутся.</p>
+<p><a class="tc" href="#t1050" id="t1050">17:30</a>Когда я открыла конверты, а там написано Бьорк с улыбкой, у меня поджилки затряслись.</p>
+<p><a class="tc" href="#t1059" id="t1059">17:39</a>А когда я иду парочку фоткать под Эфиревой башней, у меня ничего не трясется.</p>
+<p><a class="tc" href="#t1065" id="t1065">17:45</a>Забрала 300 евро и пошла довольная. Я думаю, я вам откровенно говорю. Слушай, я вот сижу и думаю о том, что, ну, понятно, что творческая реализация и реализация в профессии в полной мере, это супер важно, но, блин, мне кажется, что важно еще ну, просто выжить. Даже, ну, как бы в твоей ситуации то, что ты мама, и у тебя есть обязанности перед дочерью, и что, ну, как бы тебе надо ее кормить, одевать и учить. но даже если бы ее не было ну тебе, ну как бы вот у меня нет детей, но мне тоже важно и меня это очень</p>
+<p><a class="tc" href="#t1112" id="t1112">18:32</a>угнетает, что в 22 году, грубо говоря в начале года я договорился с там о том, что я возьму ипотеку в конце 22 и у меня было все нормально с доходом, и все было классно и мы делали проекты для Netflix а вот теперь я в Грузии, спустя 4 года Не знаю, чем платить за квартиру, но каждый месяц у меня есть уверенность, что... Да.</p>
+<p><a class="tc" href="#t1145" id="t1145">19:05</a>Абсолютно. Это тоже важно. Что мы находимся в такой нестабильной ситуации. Это тоже часть ощущения твоего, как человека. Блин, они так много завязаны вообще. Ну, типа, я хотел бы, может быть, кого-то на свидание позвать, но я потом думаю, блядь, аж ну окей, вот я позвал, мы сходили 2-3-4 раза, а дальше-то что, что я могу, ну, я же не могу там прийти к кому-то сесть какой-то девушке на шею и сказать, слушай, что-то период куёвый, давай как бы, ну, не могу же, поэтому это, ну, блин, это на всё влияет. Это пирамида масла, как бы, это базовые потребности. Это правда.</p>
+<p><a class="tc" href="#t1186" id="t1186">19:46</a>Да, да, это база, конечно, конечно. Для того, чтобы нужно иметь, как бы, хорошую базу коммерции, чтобы творить.</p>
+<p><a class="tc" href="#t1199" id="t1199">19:59</a>Ну вот применимо... Окей, да. Применимо, понимаешь, вот, несмотря на это все, как бы, состояние, Мы используем, вот ты, например, ну как бы берешься за этот проект, созваниваешься, мы идем вместе. Ты же не отказываешься от возможностей, ты видишь, что это что-то, что может.</p>
+<p><a class="tc" href="#t1225" id="t1225">20:25</a>Ну, я думаю, просто для меня точно, я думаю, что для Милены тоже, но это тоже своего рода возможность. Так и для меня, так и для меня, так же, как для вас.</p>
+<p><a class="tc" href="#t1235" id="t1235">20:35</a>Ну да. Ты видишь, что здесь может быть почва для самовыражения более глубинного, чем взяться сейчас, ну реально, за что бы то ни было, да? Хотя мы беремся за что бы то ни было. Я беру за что бы то ни было, я беру за все, за все. Но я знаю, что... Да. Я с Майей делаю кастинг для проекта, который, ну, это не про деньги, там нет денег. Там есть чуть-чуть денег. Короткий метр тоже, но это ради титра, ради того, чтобы меня заметили. Да.</p>
+<p><a class="tc" href="#t1275" id="t1275">21:15</a>Ну, в общем.</p>
+<p><a class="tc" href="#t1277" id="t1277">21:17</a>Я не знаю, я согласен за твой вопрос. Да-да-да. Который ты мне... Арка! Да. Ну, это не арка, это как бы твоя мотивация. Арка будет, когда мы пойдем в точку Б. Когда мы поймем, что Игорь за человек был. Когда мы придем в точку Б. Когда ты пойдешь в точку Б. Ну, в смысле, мы все придем в точку Б.</p>
+<p><a class="tc" href="#t1303" id="t1303">21:43</a>И вот это был мой следующий вопрос. Окей, это понятно. Я написала Игоря другу, как я могу найти брата. Жду вот я его ответ. Скажи, а у тебя есть сейчас возможность пообщаться с кем-то из друзей Игоря и задать им какие-то, может быть, кто-то один, кто-то близкий, задать им список вопросов? Вот этот мужчина, вот этот мужчина, который Сергей, который видео выложил в своем инстаграме, которое я вам послала сегодня. Для меня это вообще очень важное видео, потому что это было первое видео, где я увидела Игоря, его лицо, как он говорит. Я просто вбила в инстаграме в поиске Игорь Гуськов, вот так вот. Мне выпали какие-то разные люди, но так как по фотографиям я уже знала,</p>
+<p><a class="tc" href="#t1348" id="t1348">22:28</a>как он именно выглядит. Мне выпало просто это видео, которое выложил вот этот вот дизайнер Сергей... Сергей, Сергей, Сергей. Васильев. Васильев. И значит... И то, что он говорит не просто что-то там, а то, что он говорит эти слова про случайность и предопределенность, меня это очень сильно... Ой, ой, ой. Это я. Тут? Да. Эти слова, они меня очень сильно, как бы, понимаешь, они очень сильно попали в то место,</p>
+<p><a class="tc" href="#t1386" id="t1386">23:06</a>которое я думаю про эту коробку. Которая, понимаешь, что это была абсолютная случайность, но выглядела немножко как и предопределенность.</p>
+<p><a class="tc" href="#t1400" id="t1400">23:20</a>И когда ты мне говоришь, Что ты теряешь?</p>
+<p><a class="tc" href="#t1405" id="t1405">23:25</a>Когда ты мне говоришь, что на кону?</p>
+<p><a class="tc" href="#t1411" id="t1411">23:31</a>Я осознаю, что случайности недостаточно.</p>
+<p><a class="tc" href="#t1417" id="t1417">23:37</a>У этого слова нет даже точного определения какого-то. Вот как филолог могу вам сказать. Случайность это что-то, что этого не бывает. Это что-то, чего бы не бывает. Это тебя что-то привело туда.</p>
+<p><a class="tc" href="#t1439" id="t1439">23:59</a>Ну... Ты сам себя привел. Чисто математически, конечно, бывает.</p>
+<p><a class="tc" href="#t1445" id="t1445">24:05</a>Ну да, но я имею в виду, ты все равно как-то дошел туда, вот в эту случайность. Ты как-то туда попал, блин. А то, как ты туда попал...</p>
+<p><a class="tc" href="#t1456" id="t1456">24:16</a>Ну да. И, блин, это прикольно. И, значит, вот Родион, я постоянно, я вот близнец по знаку Зодиака, вот журналист по образованию, хуёво, хуёво, это всё хуёво, это всё та цепь, оценивая, которая немного, ну я не знаю, в моём случае, к сожалению, близнецы тоже бывают разные, говорит о том, что поговорить мы любим чуть больше, чем поделать, понимаешь? Вот я очень люблю рассказывать про эту коробку. Вот, например, если я иду на дейт, пацан пусть готовится, что ему придется послушать про коробку. Понимаешь? Хочет он этого или нет? Ему придется сразу</p>
+<p><a class="tc" href="#t1502" id="t1502">25:02</a>понять, что перед ним не просто девчонка какая-то с неба упала, а которая нашла коробку, понимаешь? Которая нашла коробку. Но между тем, вот за эти месяцы мне стало вообще очень явно понятно, чтобы найти коробку. Слушай, прости, мы так и назовем кино «Коробка». А я такая, мы с Нелиной, у нас в презентации так и написано «бокс». Я все время говорю «Коробка, коробка». Мы так и назовем «Коробка», вариантов других нет. «Коробка», она, она, ты что туда, там что угодно в этой коробке, понимаешь? Но там еще Бьорк с улыбкой, об этом не надо забывать. Значит, я люблю поговорить про эту «Коробку», Но что я сделала за 7 месяцев, что я её нашла?</p>
+<p><a class="tc" href="#t1550" id="t1550">25:50</a>Слава Богу, есть вы, как бы. А кроме этого, ну, есть вот люди, есть вот этот Серёжа Васильев, люди-то прибавились. Но знаешь, между коробкой и тем, чтобы начать двигаться вперёд, снимать, там пролегает, как бы.</p>
+<p><a class="tc" href="#t1567" id="t1567">26:07</a>Да, да. Ты знаешь, что ты... Простите, пожалуйста. Ты проговариваешь, чтобы сформулировать Спублировать у себя, чтобы, возможно, что-то понять, и что-то более стало осязаемым. Это как вот посттравматическое расстройство, например. Ты тоже переживаешь это, потому что, возможно, это твой просто метод восприятия информации. Поэтому в этом нет ничего плохого. И вообще можно найти спонсор, может быть, на дейте.</p>
+<p><a class="tc" href="#t1596" id="t1596">26:36</a>Да, хотелось бы.</p>
+<p><a class="tc" href="#t1599" id="t1599">26:39</a>Хотелось бы. Вот, Юрий... Вот скажи, да.</p>
+<p><a class="tc" href="#t1604" id="t1604">26:44</a>Вот юрист, например. Вот юрист, например. Вот юрист стоит бабла. Консультация с юристом. У меня нет знакомых юристов, которые именно по этому праву специализируются. Оно очень специфическое. Потому что когда я говорю с людьми, которые здесь снимают документальное кино, базирующееся на использовании каких-то материалов. Не просто они снимают кино. Вот я стала мужчин встречать и дейтить. Случайно так. С тех пор, как я нашла коробку, которые снимают документальное кино.</p>
+<p><a class="tc" href="#t1637" id="t1637">27:17</a>Они сами приходят в мою жизнь. Я их туда не зову. Знакомлюсь, а мне человек говорит, я снимаю документальное кино. Вот есть два типа. Люди, которые используют чужие материалы в своем документальном кино, и люди, которые не используют. Люди, которые используют чужий материал, например, познакомилась с парнем, который снял фильм про Гиома де Пардье. Это сын де Пардье, который умер от наркотической зависимости. Ну, там, он не только от этого, там у него с ногой были проблемы, но все как бы... Жарко стало.</p>
+<p><a class="tc" href="#t1670" id="t1670">27:50</a>Как бы все сводится к тому, что... И вот он использовал чужие интервью в своем фильме. Он использовал материалы, которые, например, в сети находил в своем фильме. Его вел юрист, специализирующий по авторским правам. Он мне говорит, что... Здесь в чем прикол? Когда ты берешь консультацию у юриста, когда ты снимаешь документальный фильм, во Франции, да, там, например, используешь чьи-то материалы, то юрист, он становится юридически ответственный за те, как бы, консультации, которые он тебе дает, понимаешь? То есть ты, например, в фильме используешь что-то, тебе юрист говорит, ты имеешь право на таких-то основаниях это использовать. Ты используешь, а если потом оказывается, что ты права не имел, юрист так же</p>
+<p><a class="tc" href="#t1715" id="t1715">28:35</a>несет ответственность, как и ты. Алло Да, да, да Но у меня нет денег на юридию Ну, смотри, в общем Нам нужно еще совершить несколько действий Прежде чем можно будет сделать презу И классно, что мы сегодня обсудили эту важную штуку, мотивацию Но хочется еще понять по герою, по Игорю, для этого нужно провести какое-то, по крайней мере, одно созвон с кем-то из друзей, например, с этим Сергеем, и поговорить с ним, просто чтобы понять, что там в этой истории есть.</p>
+<p><a class="tc" href="#t1766" id="t1766">29:26</a>Да Вот А параллельно я могу У меня есть подруга, она не французский юрист Но я думаю, что я с ней могу посоветоваться И возможно у нее есть кто-то знакомый Во Франции Кто сможет нас бесплатно проконсультировать Короче, цепочка такая, интервью с другом Да Контакт брата от друга Чтобы предварительно понять И вообще познакомиться с ним И предварительно понять, не против ли он Потому что материалы нам нужны Их надо использовать И хорошо бы, чтобы Мы могли их использовать Чтобы не надо было что-то придумывать Придумать что-то можно будет Но это супер важный элемент Этой истории Коробка и материалы Короче, друг</p>
+<p><a class="tc" href="#t1813" id="t1813">30:13</a>Знакомство с братом И юрист Но для того, чтобы мы сделали Презу И кому-то пошли сказали, дайте нам денег на разработку, не на съемки, а на разработку, чтобы у тебя была возможность, ну, чтобы были деньги, короче, чтобы у тебя была возможность заниматься этим. Да, я понимаю, да. Да, чтобы ты могла, грубо говоря, оплатить квартиру и не думать там какой-то месяц.</p>
+<p><a class="tc" href="#t1842" id="t1842">30:42</a>Вот. То есть это чисто технические бабки, там, не знаю, на билеты, на то, чтобы тебе не нужно было там или не в таком объеме заниматься работой основной, чтобы ты могла как бы уделить время полноценное и проекту. Вот, короче, для этого нужна преза, а для преза не хватает нам общения пока что с другом. Ну, и раз уж общаемся с другом, то выходим на брата. Или надо подумать, я не знаю, Миллиан, надо выходить на него сейчас. Ну, в любом случае, это будет первое, что нас спросят, типа, у вас есть вообще права на это все? Поэтому думаю, что надо. Я думаю, что да, понять просто вообще его включенность, их, вот то, что я в прошлый раз...</p>
+<p><a class="tc" href="#t1887" id="t1887">31:27</a>Вообще настроение понять, может, он ненавидит брата своего. Кто он такой вообще, чем он живет, и вообще какая у него, какая линия у него происходит и между ними с Игорем, потому что да, действительно, может быть, он категорически против, и тогда нужно будет что-то альтернативное думать. Поэтому да. А вот звонцы Сергея мы вместе организуем, или Таня сама, или как я думаю, Какое у вас между вами Взаимоотношение Насколько он открыт Я могу Прислать вам переписку Есть чувство, что он очень открыт Что он очень рад, что это все спасено Что он мне говорит, что Приготовься к тому, что у тебя будет Многоферийный фильм, потому что Такие люди, столько людей захотят Говорить об Игоре Он был действительно как-то</p>
+<p><a class="tc" href="#t1935" id="t1935">32:15</a>Широко известен в узких кругах кино Кантемир Благов Это режиссер, которого он пихнул, Игорь, в программу, где он работал на этой программе. Да, он его отобрал. Да, он его отобрал. Есть такое даже в интернете, когда я читаю «Некролог», есть такое высказывание, что открыл европейскому кино русского режиссера Кантемира Благова. Окей Это интересно, потому что У меня просто его Как бы его карьерой занимается Ну, отчасти Занимается Александр Роднянский Продюсер А у меня есть на него выходы, потому что мы с ним делали проект</p>
+<p><a class="tc" href="#t1982" id="t1982">33:02</a>И это тоже как бы Он в Европе еще Хороший визибилити имеет Этот режиссер Я вижу, что его показывают много в Европе Потому что есть Сокуров на фотографиях Да А Сокуров это его мастер. Вот. Есть прямо, знаешь, один конверт с премьеры какого-то фильма Сокурова. И видно, что, знаешь, это видно по фото, что люди...</p>
+<p><a class="tc" href="#t2013" id="t2013">33:33</a>Вот я буду фоткать Милену сидеть где-то в кафе в парижском. Вот как она будет смотреть на меня, понимаешь?</p>
+<p><a class="tc" href="#t2020" id="t2020">33:40</a>И вот так они смотрят друг на друга. А не так, как если бы я фотографировала тебя, ты пришел, продюсер на Каннском фестивале, пришла девочка-фотограф, для журнала «Эль» сделать пару кадров, понимаешь, и ты сел. Нет, там все на расслабухе с бокальчиком шампанского. То же самое «Лунгин», масса фотографий «Лунгина». Вот понимаешь, что русское кино, которое они везли в те годы, видно, что он там свой человечек. Он же делал фестиваль на Волге, он делал фестиваль в Таллине какой-то.</p>
+<p><a class="tc" href="#t2054" id="t2054">34:14</a>русского кино.</p>
+<p><a class="tc" href="#t2057" id="t2057">34:17</a>Моя клиентка, которая написала мне, ты нашла архив Игоря, она работала три года с ним еще. Такой вот человек есть. Она готова говорить. Но она в такой момент, представь себе, что здесь живет в Париже Жанна Агалакова, так это женщина с русского телевидения. Я как журналист тоже, это имя у меня в голове на слуху. Они были, видимо, очень близкими с Игорем друзьями. И это Настя, когда она, вот эта вот моя клиентка, она тоже тружит с ними, и когда она увидела, что нашла коробку, она написала мне такую фразу, что-то из серии «Может быть, ты ей отдашь коробку?» Они вот типа его друзья, они этого действительно заслуживают. Понимаешь?</p>
+<p><a class="tc" href="#t2103" id="t2103">35:03</a>Типа, ты кто тут? А вот они... На что я сказала еще, Настя, извини, но...</p>
+<p><a class="tc" href="#t2111" id="t2111">35:11</a>Такого кино мы не снимаем. Мы не снимаем ни про это. Мы здесь снимаем.</p>
+<p><a class="tc" href="#t2116" id="t2116">35:16</a>Поговори с другом. Если он не против, то можно и всем вместе с ним пообщаться.</p>
+<p><a class="tc" href="#t2122" id="t2122">35:22</a>Если ему как-то там что-то неловко, то можете один на один, но тогда надо будет записать этот Zoom. А безусловно. Тогда купим платные. Я уже купила. А, ничего себе. Можем с тобой распополамить эту троту. Можем расстроить. Света трость. По 200 рублей. я с вами делюсь.</p>
+<p><a class="tc" href="#t2146" id="t2146">35:46</a>Да, тут даже есть такая функция. Нормально, недорого. Обнаружила, что можно делать репорт с помощью искусственного интеллекта. Да-да-да, расшифровках, конечно.</p>
+<p><a class="tc" href="#t2158" id="t2158">35:58</a>Для меня это было откровением, если честно. Короче, давайте план такой. Давайте поймем, когда он может пообщаться. Я списываюсь. Если он готов.</p>
+<p><a class="tc" href="#t2169" id="t2169">36:09</a>Пускай скажут, мы тогда поймем по своей занятости. Если он не против, мы можем все вместе. Если по какой-то причине он против, тогда просто ты один на один. Если другие люди. Надо будет подготовить... Списочек вопросов. Если он довольно близкий и готов, то, мне кажется, надо начать с него. Да, начнем с него. Список вопросов давайте сделаем. Давайте подумаем над списком вопросов. И давайте все вместе подумаем.</p>
+<p><a class="tc" href="#t2198" id="t2198">36:38</a>Короче, я... О, вот что, Милен, а ты сможешь потом даже не запись, а расшифровку кинуть этого разговора, чтобы у каждого из нас она была, и чтобы мы, я просто хочу, ну, и для себя, и для вас сформулировать все, что мы проговорили про мотивацию Тани, сформулировать это в тексте, потому что это потом нужно будет для презентации. Да, я сделаю, я здесь в этот раз, оно что-то не сработало у меня, но я закину через клод, там, через коллег. Это можно, да, запись, сам файл закину. Да, да, да, я сделаю, сделаю. У меня есть гейм, у меня есть оплаченные геймени, если надо. Он тоже это может сделать. Супер, да. Ну и в следующий раз я... Для меня новая технология.</p>
+<p><a class="tc" href="#t2242" id="t2242">37:22</a>Окей. Да, супер. Можно на следующую неделю, на самом деле, чтобы не сбивать наш темп. Да-да.</p>
+<p><a class="tc" href="#t2249" id="t2249">37:29</a>Я единственное, что улетаю на Камчатку, мне нужно на пару дней по делам полететь больше. Блин, Билен, он же с Камчатки. Игорь был. Ты ничего там не подснимешь?</p>
+<p><a class="tc" href="#t2263" id="t2263">37:43</a>Да, он с Камчатку.</p>
+<p><a class="tc" href="#t2266" id="t2266">37:46</a>Слушай, да, мы можем это потом... Ну, это все не так дорого стоит, по России пролететься. Просто что-то с ним. Я бы полетела, мечта моя. Да, мне там по семейным просто нужно делам слетать. А, ты с Камчатки сама? У меня родители, да, оттуда.</p>
+<p><a class="tc" href="#t2284" id="t2284">38:04</a>А-а-а. Все, у нас это все сработало. Да, окей, окей. Number one. Хорошо.</p>
+<p><a class="tc" href="#t2295" id="t2295">38:15</a>Все, тогда напишешь тогда сегодня Сергею, вот, и мы тогда у него уже узнаем тогда по поводу брата, я думаю, поймем вообще в каких они настроениях, и уже тогда от этого разговора оттолкнемся насчет созвона следующего, или встречи, не знаю. А где он территориально находится, этот мужик? В Москве. А, ну так нормально.</p>
+<p><a class="tc" href="#t2315" id="t2315">38:35</a>Поедем, поеду к нему.</p>
+<p><a class="tc" href="#t2318" id="t2318">38:38</a>Здравствуйте. Перетереть! Перетереть!</p>
+<p><a class="tc" href="#t2323" id="t2323">38:43</a>Окей, хорошо. Спасибо, ребят, все, я работаю. Хорошо. Хорошо. Так, и я по поводу юрист тоже могу узнать, на самом деле. У меня единственное, что я боюсь, что бесплатного не получится найти. Но можем собрать контакты и понять, кто самый лучший, мало ли повезет. Не-не, у меня подруга, которая занимается авторским правом, она сейчас живет в Израиле, она уже стала израильским юристом. но она по-прежнему работает удаленно на Москву, и, возможно, у нее есть кто-то во Франции, я у нее уточню. Окей, супер. Супер, отлично.</p>
+<p><a class="tc" href="#t2361" id="t2361">39:21</a>Вот. Я вас благодарю. Хорошо. Взаимно. Все, я тогда сейчас через пару часов пришлю расшифровку. Да, спасибо большое. Вот. А я напишу Сергею и буду вам скидывать обновления этих новостей, так скажем. Все, договорились. Спасибо, гигантское. Хорошо. Пока.</p>
+<p><a class="tc" href="#t2380" id="t2380">39:40</a>Глазного дня. Пока, ребята. Пока, пока. Хорошего вечера. Пока, пока.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  Расшифровка сделана из записи Zoom автоматически и вычитана. Спикеры определены по смыслу — записи по голосам не было, поэтому в отдельных репликах возможна путаница. Имена собственные проверены по контексту.
+</div></footer>
+
+<script>
+document.querySelectorAll('.task input').forEach(function(i){
+  var k='box2711-'+i.dataset.k, v=localStorage.getItem(k);
+  if(v!==null) i.checked=v==='1';
+  i.addEventListener('change',function(){localStorage.setItem(k,i.checked?'1':'0')});
+});
+function jump(sec){
+  var d=document.getElementById('raw'); d.open=true;
+  var ps=[].slice.call(d.querySelectorAll('.rawbody p')), best=ps[0];
+  ps.forEach(function(p){var t=+p.querySelector('a').id.slice(1); if(t<=sec) best=p;});
+  ps.forEach(function(p){p.classList.remove('hit')});
+  best.classList.add('hit'); best.scrollIntoView({block:'center'});
+}
+document.querySelectorAll('a[data-jump]').forEach(function(a){
+  a.addEventListener('click',function(e){e.preventDefault(); jump(+a.dataset.jump);});
+});
+document.querySelectorAll('.line .tc, h3.ch .tc').forEach(function(s){
+  var m=s.textContent.split(':'); s.style.cursor='pointer'; s.title='Открыть в полной расшифровке';
+  s.addEventListener('click',function(){jump(+m[0]*60+ +m[1]);});
+});
+</script>
+</body>
+</html>
